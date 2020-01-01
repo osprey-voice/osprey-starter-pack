@@ -24,19 +24,19 @@ f_keys = {f"F{i}": f"F{i}" for i in range(1, 13)}
 
 simple_keys = normalise_keys(
     {
-        "crimp|lloyd": "Left",
-        "chris": "Right",
-        "jeep": "Up",
-        "dune|doom": "Down",
-        "backspace|junk": "Backspace",
-        "delete|forward delete|scrap|spunk": "Delete",
-        "space|skoosh": "Space",
-        "tab|tarp": "Tab",
-        "enter|shock": "Enter",
-        "escape|randall": "Escape",
+        "left": "Left",
+        "right": "Right",
+        "up": "Up",
+        "down": "Down",
+        "backspace": "Backspace",
+        "delete|forward delete": "Delete",
+        "space": "Space",
+        "tab": "Tab",
+        "enter": "Enter",
+        "escape": "Escape",
         "home": "Home",
-        "pagedown": "PageDown",
-        "pageup": "PageUp",
+        "page down": "PageDown",
+        "page up": "PageUp",
         "end": "End",
     }
 )
@@ -47,17 +47,17 @@ symbols = normalise_keys(
         # keys to press on a standard US keyboard layout. Commands for keys that do
         # require modifiers (e.g. ``"caret": "^"`) should belong in
         # ``text/symbol.py``.
-        "tick|back tick": "`",
+        "tick|back tick|backtick": "`",
         "comma|,": ",",
-        "dot|period": ".",
+        "dot|period|.": ".",
         "semicolon|semi": ";",
-        "quote|quatchet": "'",
+        "quote|single quote": "'",
         "square|L square|left square|left square bracket": "[",
         "R square|right square|right square bracket": "]",
         "slash|forward slash": "/",
         "backslash": "\\",
         "minus|dash": "-",
-        "equals|smaqual": "=",
+        "equals": "=",
     }
 )
 
@@ -65,7 +65,7 @@ modifiers = normalise_keys(
     {
         "command": "Cmd",
         "control|troll": "Ctrl",
-        "shift|sky": "Shift",
+        "shift": "Shift",
         "alt|option": "Alt",
     }
 )
@@ -130,14 +130,12 @@ def press_keys(m):
 
 ctx = Context("basic_keys")
 ctx.set_keymap({
-    "(uppercase|ship|sky) {alphabet+}(lowercase|lower|sunk)?": uppercase_letters,
+    "(uppercase|upper|shift) {alphabet+}(lowercase|lower)?": uppercase_letters,
     "{modifiers*}{alphabet+}": press_keys,
     "{modifiers*}{digits+}": press_keys,
     "{modifiers*}{keys+}": press_keys,
     "(go|{modifiers+}) {arrows+}": press_keys,
     "number {digits+}(over)?": press_keys,
-    "tarsh": lambda m: press("Shift-Tab"),
-    "tarpy": lambda m: press("Tab Tab"),
 })
 ctx.set_lists({
     "alphabet": alphabet.keys(),
