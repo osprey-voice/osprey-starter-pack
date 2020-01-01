@@ -11,11 +11,12 @@ def normalise_keys(dict):
     return normalised_dict
 
 
-talon_alphabet_keys = "air bat cap drum each fine gust harp sit jury crunch look made near odd pit quench red sun trap urge vest whale plex yank zip".split()
-twoshea_alphabet_keys = "air bat cap dip each far gone harp sit jury crunch look mad near odd pit quench red sun trap urge vest whale plex yank zip".split()
-default_alphabet_keys = twoshea_alphabet_keys
+talon_alphabet_words = "air bat cap drum each fine gust harp sit jury crunch look made near odd pit quench red sun trap urge vest whale plex yank zip"
+twoshea_alphabet_words = talon_alphabet_words.replace('drum', 'dip').replace(
+    'fine', 'far').replace('gust', 'gone').replace('made', 'mad')
+default_alphabet_words = talon_alphabet_words.replace('gust', 'gone')
 
-alphabet_keys = default_alphabet_keys
+alphabet_keys = default_alphabet_words.split()
 
 alphabet = dict(zip(alphabet_keys, string.ascii_lowercase))
 
