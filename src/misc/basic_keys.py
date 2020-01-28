@@ -2,13 +2,7 @@ import string
 
 from osprey.voice import Context, press, insert
 
-
-def normalise_keys(dict):
-    normalised_dict = {}
-    for k, v in dict.items():
-        for cmd in k.split('|'):
-            normalised_dict[cmd] = v
-    return normalised_dict
+from ..utils import normalise_keys
 
 
 talon_alphabet_words = "air bat cap drum each fine gust harp sit jury crunch look made near odd pit quench red sun trap urge vest whale plex yank zip"
@@ -22,53 +16,47 @@ alphabet = dict(zip(alphabet_keys, string.ascii_lowercase))
 
 f_keys = {f"F{i}": f"F{i}" for i in range(1, 13)}
 
-simple_keys = normalise_keys(
-    {
-        "left": "Left",
-        "right": "Right",
-        "up": "Up",
-        "down": "Down",
-        "backspace": "Backspace",
-        "delete|forward delete": "Delete",
-        "space": "Space",
-        "tab": "Tab",
-        "enter": "Enter",
-        "escape": "Escape",
-        "home": "Home",
-        "page down": "PageDown",
-        "page up": "PageUp",
-        "end": "End",
-    }
-)
+simple_keys = normalise_keys({
+    "left": "Left",
+    "right": "Right",
+    "up": "Up",
+    "down": "Down",
+    "backspace": "Backspace",
+    "delete|forward delete": "Delete",
+    "space": "Space",
+    "tab": "Tab",
+    "enter": "Enter",
+    "escape": "Escape",
+    "home": "Home",
+    "end": "End",
+    "page up": "PageUp",
+    "page down": "PageDown",
+})
 
-symbols = normalise_keys(
-    {
-        # NOTE:  This should only contain symbols that do not require any modifier
-        # keys to press on a standard US keyboard layout. Commands for keys that do
-        # require modifiers (e.g. ``"caret": "^"`) should belong in
-        # ``text/symbol.py``.
-        "tick|back tick|backtick": "`",
-        "comma|,": ",",
-        "dot|period|.": ".",
-        "semicolon|semi": ";",
-        "quote|single quote": "'",
-        "square|L square|left square|left square bracket": "[",
-        "R square|right square|right square bracket": "]",
-        "slash|forward slash": "/",
-        "backslash": "\\",
-        "minus|dash": "-",
-        "equals": "=",
-    }
-)
+symbols = normalise_keys({
+    # NOTE:  This should only contain symbols that do not require any modifier
+    # keys to press on a standard US keyboard layout. Commands for keys that do
+    # require modifiers (e.g. ``"caret": "^"`) should belong in
+    # ``text/symbol.py``.
+    "tick|back tick|backtick": "`",
+    "comma|,": ",",
+    "dot|period|.": ".",
+    "semicolon|semi": ";",
+    "quote|single quote": "'",
+    "square|L square|left square|left square bracket": "[",
+    "R square|right square|right square bracket": "]",
+    "slash|forward slash": "/",
+    "backslash": "\\",
+    "minus|dash": "-",
+    "equals": "=",
+})
 
-modifiers = normalise_keys(
-    {
-        "command": "Cmd",
-        "control|troll": "Ctrl",
-        "shift": "Shift",
-        "alt|option": "Alt",
-    }
-)
+modifiers = normalise_keys({
+    "command": "Cmd",
+    "control|troll": "Ctrl",
+    "shift": "Shift",
+    "alt|option": "Alt",
+})
 
 keys = {}
 keys.update(f_keys)
