@@ -34,57 +34,39 @@ simple_keys = normalise_keys({
 })
 
 symbols = normalise_keys({
-    # NOTE:  This should only contain symbols that do not require any modifier
-    # keys to press on a standard US keyboard layout. Commands for keys that do
-    # require modifiers (e.g. ``"caret": "^"`) should belong in
-    # ``text/symbol.py``.
     "tick|back tick|backtick": "`",
     "comma|,": ",",
     "dot|period|.": ".",
     "semicolon|semi": ";",
     "quote|single quote": "'",
-    "square|L square|left square|left square bracket": "[",
-    "R square|right square|right square bracket": "]",
+    "square|l square|left square|open square|bracket|l bracket|left bracket|open bracket": "[",
+    "r square|are square|right square|close square|r bracket|are bracket|right bracket|close bracket": "]",
     "slash|forward slash": "/",
     "backslash": "\\",
     "minus|dash": "-",
     "equals": "=",
 
-    # simple
-    "(question [mark] | questo)": "?",
+    "question|question mark": "?",
     "plus": "+",
     "tilde": "~",
-    "(bang | exclamation point | clamor)": "!",
-    "(dollar [sign] | dolly)": "$",
-    "(downscore | crunder)": "_",
+    "bang|exclamation|exclamation point": "!",
+    "dollar|dollar sign": "$",
+    "underscore|under score": "_",
     "colon": ":",
-    "(lparen | [left] paren | precorp )": "(",
-    "(rparen | are paren | right paren | precose)": ")",
-    "(brace | left brace | kirksorp)": "{",
-    "(rbrace | are brace | right brace | kirkos)": "}",
-    "(angle | left angle | less than)": "<",
-    "(rangle | are angle | right angle | greater than)": ">",
-    "(star | asterisk)": "*",
-    "(pound | hash [sign] | octo | number sign)": "#",
-    "percent [sign]": "%",
+    "paren|l paren|left paren|open paren": "(",
+    "r paren|are paren|right paren|close paren": ")",
+    "brace|l brace|left brace|open brace": "{",
+    "r brace|are brace|right brace|close brace": "}",
+    "angle|l angle|left angle|less than": "<",
+    "r angle|are angle|right angle|greater than": ">",
+    "star|asterisk": "*",
+    "pound|pound sign|hash|hash sign|octo|number sign": "#",
+    "percent|percent sign": "%",
     "caret": "^",
     "at sign": "@",
-    "(and sign | ampersand | amper)": "&",
-    "(pipe | spike)": "|",
-    "(dubquote | double quote | quatches)": '"',
-    # compound
-    "mintwice": "--",
-    "plustwice": "++",
-    "minquall": "-=",
-    "pluqual": "+=",
-    "starqual": "*=",
-    "triple quote": "'''",
-    "triple tick": "```",
-    "[forward] dubslash": "//",
-    "coal twice": "::",
-    "(dot dot | dotdot)": "..",
-    "(ellipsis | dot dot dot | dotdotdot)": "...",
-    # unnecessary: use repetition commands?
+    "and sign|ampersand|amper": "&",
+    "pipe|bar": "|",
+    "double quote": '"',
 })
 
 modifiers = normalise_keys({
