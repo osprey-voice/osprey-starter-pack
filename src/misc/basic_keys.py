@@ -129,7 +129,7 @@ def press_keys(m):
         return uppercase_letters(m)
 
     if mods:
-        press("-".join(mods + [keys[0]]))
+        press(" ".join(mods + [keys[0]]))
         keys = keys[1:]
     for k in keys:
         press(k)
