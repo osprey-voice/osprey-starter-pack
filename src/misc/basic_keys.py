@@ -82,6 +82,7 @@ keys.update(simple_keys)
 keys.update(symbols)
 
 digits = {str(i): str(i) for i in range(10)}
+digits.update({"for": "4"})
 
 # separate arrow dictionary for combining with modifiers
 arrows = {"left": "Left", "right": "Right", "up": "Up", "down": "Down"}
