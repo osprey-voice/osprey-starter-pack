@@ -35,8 +35,8 @@ simple_keys = normalise_keys({
 
 symbols = normalise_keys({
     "tick|back tick|backtick": "`",
-    "comma|,": ",",
-    "dot|period|.": ".",
+    "comma": ",",
+    "dot|period": ".",
     "semicolon|semi": ";",
     "quote|single quote": "'",
     "square|l square|open square|bracket|l bracket|open bracket": "[",
