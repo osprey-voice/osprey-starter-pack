@@ -82,7 +82,7 @@ keys.update(simple_keys)
 keys.update(symbols)
 
 digits = {str(i): str(i) for i in range(10)}
-digits.update({"for": "4"})
+digits.update({"to": "2", "too": "2", "for": "4"})
 
 # map alnum and keys separately so engine gives priority to letter/number repeats
 keymap = keys.copy()
