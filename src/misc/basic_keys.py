@@ -17,10 +17,10 @@ alphabet = dict(zip(alphabet_keys, string.ascii_lowercase))
 f_keys = {f"F{i}": f"F{i}" for i in range(1, 13)}
 
 simple_keys = normalise_keys({
-    "left": "Left",
-    "right": "Right",
-    "up": "Up",
-    "down": "Down",
+    "left|go left": "Left",
+    "right|go right": "Right",
+    "up|go up": "Up",
+    "down|go down": "Down",
     "backspace": "Backspace",
     "delete|forward delete": "Delete",
     "space": "Space",
@@ -84,14 +84,10 @@ keys.update(symbols)
 digits = {str(i): str(i) for i in range(10)}
 digits.update({"for": "4"})
 
-# separate arrow dictionary for combining with modifiers
-arrows = {"left": "Left", "right": "Right", "up": "Up", "down": "Down"}
-
 # map alnum and keys separately so engine gives priority to letter/number repeats
 keymap = keys.copy()
 keymap.update(alphabet)
 keymap.update(digits)
-keymap.update(arrows)
 
 
 def get_modifiers(m):
@@ -104,7 +100,6 @@ def get_modifiers(m):
 def get_keys(m):
     groups = [
         "keys",
-        "arrows",
         "digits",
         "alphabet",
         "keymap",
@@ -141,14 +136,12 @@ ctx.set_keymap({
     "{modifiers*}{alphabet+}": press_keys,
     "{modifiers*}{digits+}": press_keys,
     "{modifiers*}{keys+}": press_keys,
-    "(go|{modifiers+}) {arrows+}": press_keys,
     "number {digits+}(over)?": press_keys,
 })
 ctx.set_lists({
     "alphabet": alphabet.keys(),
     "digits": digits.keys(),
     "keys": keys.keys(),
-    "arrows": arrows.keys(),
     "modifiers": modifiers.keys(),
     "keymap": keymap.keys(),
 })
