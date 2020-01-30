@@ -9,9 +9,7 @@ A few reasons to use ordinals:
 - Ordinals don't need to be memorized
 - Ordinals are not likely to collide with other commands
 """
-from talon.voice import Context, Rep, talon
-
-ctx = Context("repeater")
+from osprey.voice import Context, repeat
 
 ordinals = {}
 
@@ -34,14 +32,12 @@ def ordinal(n):
 for n in range(2, 100):
     ordinals[ordinal(n)] = n - 1
 
-ctx.set_list("ordinals", ordinals.keys())
+
+def repeater(m):
+    ordinal = m["ordinals"][0]
+    repeat(ordinals[ordinal])
 
 
-def repeat(m):
-    o = m["repeater.ordinals"][0]
-    repeater = Rep(int(ordinals[o]))
-    repeater.ctx = talon
-    return repeater(None)
-
-
-ctx.keymap({"{repeater.ordinals}": repeat})
+ctx = Context("repeater")
+ctx.set_keymap({"{ordinals}": repeater})
+ctx.set_lists({"ordinals": ordinals.keys()})
