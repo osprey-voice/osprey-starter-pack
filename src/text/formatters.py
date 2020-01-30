@@ -4,4 +4,5 @@ ctx = Context("formatters")
 
 ctx.set_keymap({
     "word {word}": lambda m: insert(m['word'][0]),
+    "phrase {phrase}": lambda m: insert(m['phrase'][0]),
 })
