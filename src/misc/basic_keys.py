@@ -43,7 +43,7 @@ symbols = normalise_keys({
     "r square|are square|close square|r bracket|are bracket|close bracket": "]",
     "slash|forward slash": "/",
     "backslash": "\\",
-    "minus|dash": "-",
+    "minus|dash|hyphen": "-",
     "equals": "=",
 
     "question|question mark": "?",
