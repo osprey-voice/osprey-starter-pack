@@ -11,8 +11,6 @@ A few reasons to use ordinals:
 """
 from osprey.voice import Context, repeat
 
-ordinals = {}
-
 
 def ordinal(n):
     """
@@ -29,8 +27,7 @@ def ordinal(n):
     return str(n) + suffix
 
 
-for n in range(2, 100):
-    ordinals[ordinal(n)] = n - 1
+ordinals = {ordinal(n): n - 1 for n in range(2, 100)}
 
 
 def repeater(m):
