@@ -36,7 +36,7 @@ def repeater(m):
 
 
 ctx = Context("repeater")
-ctx.set_keymap({
+ctx.set_rules({
     "{ordinals}": repeater,
 })
 ctx.set_lists({

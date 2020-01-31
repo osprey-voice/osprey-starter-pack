@@ -103,7 +103,7 @@ def press_keys(m):
 
 
 ctx = Context("basic_keys")
-ctx.set_keymap({
+ctx.set_rules({
     "{modifiers+}{keys}": press_key_with_modifiers,
     "{keys+}": press_keys,
 })
