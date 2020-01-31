@@ -34,40 +34,54 @@ simple_keys = normalise_keys({
 })
 
 symbols = normalise_keys({
+    # no shift required
     "tick|back tick|backtick": "`",
+    "minus|dash|hyphen": "-",
+    "equals": "=",
     "comma": ",",
     "dot|period": ".",
+    "slash|forward slash": "/",
     "semicolon|semi": ";",
     "quote|single quote": "'",
     "square|l square|open square|bracket|l bracket|open bracket": "[",
     "r square|are square|close square|r bracket|are bracket|close bracket": "]",
-    "slash|forward slash": "/",
     "backslash": "\\",
-    "minus|dash|hyphen": "-",
-    "equals": "=",
 
-    "question|question mark": "?",
-    "plus": "+",
+    # shift required
     "tilde": "~",
-    "bang|exclamation|exclamation point": "!",
-    "dollar|dollar sign": "$",
     "underscore|under score": "_",
-    "colon": ":",
-    "paren|l paren|open paren": "(",
-    "r paren|are paren|close paren": ")",
-    "brace|l brace|open brace": "{",
-    "r brace|are brace|close brace": "}",
+    "plus": "+",
     "angle|l angle|open angle|less than": "<",
     "r angle|are angle|close angle|greater than": ">",
-    "star|asterisk": "*",
+    "question|question mark": "?",
+    "colon": ":",
+    "double quote": '"',
+    "brace|l brace|open brace": "{",
+    "r brace|are brace|close brace": "}",
+    "pipe|bar": "|",
+
+    # above numbers
+    "bang|exclamation|exclamation point": "!",
+    "at sign": "@",
     "pound|pound sign|hash|hash sign|hashtag|hash tag|number sign": "#",
+    "dollar|dollar sign": "$",
     "percent|percent sign": "%",
     "caret": "^",
-    "at sign": "@",
     "ampersand|amper": "&",
-    "pipe|bar": "|",
-    "double quote": '"',
+    "star|asterisk": "*",
+    "paren|l paren|open paren": "(",
+    "r paren|are paren|close paren": ")",
 })
+
+digits = {str(i): str(i) for i in range(10)}
+digits.update({"to": "2", "too": "2", "for": "4"})
+
+keys = {}
+keys.update(f_keys)
+keys.update(simple_keys)
+keys.update(symbols)
+keys.update(alphabet)
+keys.update(digits)
 
 modifiers = normalise_keys({
     "command": "Cmd",
@@ -76,72 +90,24 @@ modifiers = normalise_keys({
     "alt|option": "Alt",
 })
 
-keys = {}
-keys.update(f_keys)
-keys.update(simple_keys)
-keys.update(symbols)
 
-digits = {str(i): str(i) for i in range(10)}
-digits.update({"to": "2", "too": "2", "for": "4"})
-
-# map alnum and keys separately so engine gives priority to letter/number repeats
-keymap = keys.copy()
-keymap.update(alphabet)
-keymap.update(digits)
-
-
-def get_modifiers(m):
-    try:
-        return [modifiers[mod] for mod in m["modifiers"]]
-    except KeyError:
-        return []
-
-
-def get_keys(m):
-    groups = [
-        "keys",
-        "digits",
-        "alphabet",
-        "keymap",
-    ]
-    for group in groups:
-        try:
-            return [keymap[k] for k in m[group]]
-        except KeyError:
-            pass
-    return []
-
-
-def uppercase_letters(m):
-    insert("".join(get_keys(m)).upper())
+def press_key_with_modifiers(m):
+    mods = [modifiers[mod] for mod in m['modifiers']]
+    key = keys[m['keys'][0]]
+    press(" ".join(mods + [key]))
 
 
 def press_keys(m):
-    mods = get_modifiers(m)
-    keys = get_keys(m)
-
-    if mods == ["shift"] and all(key in alphabet.values() for key in keys):
-        return uppercase_letters(m)
-
-    if mods:
-        press(" ".join(mods + [keys[0]]))
-        keys = keys[1:]
-    for k in keys:
-        press(k)
+    for key in m['keys']:
+        press(keys[key])
 
 
 ctx = Context("basic_keys")
 ctx.set_keymap({
-    "(uppercase|upper|shift) {alphabet+}(lowercase|lower)?": uppercase_letters,
-    "{modifiers*}{alphabet+}": press_keys,
-    "{modifiers*}{digits+}": press_keys,
-    "{modifiers*}{keys+}": press_keys,
-    "number {digits+}(over)?": press_keys,
+    "{modifiers+}{keys}": press_key_with_modifiers,
+    "{keys+}": press_keys,
 })
 ctx.set_lists({
-    "alphabet": alphabet.keys(),
-    "digits": digits.keys(),
     "keys": keys.keys(),
     "modifiers": modifiers.keys(),
-    "keymap": keymap.keys(),
 })
