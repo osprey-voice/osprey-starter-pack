@@ -13,7 +13,6 @@ default_alphabet_words = talon_alphabet_words.replace('gust', 'gone')
 alphabet_keys = default_alphabet_words.split()
 
 alphabet = dict(zip(alphabet_keys, string.ascii_lowercase))
-alphabet.update({"are": "a", "there": "a"})
 
 f_keys = {f"F{i}": f"F{i}" for i in range(1, 13)}
 
@@ -75,7 +74,14 @@ symbols = normalise_keys({
 })
 
 digits = {str(i): str(i) for i in range(10)}
-digits.update({"to": "2", "too": "2", "for": "4"})
+
+homophones = normalise_keys({
+    "are|there|their|they're": "a",
+    "airspace": ["a", "Space"],
+    "to|too": "2",
+    "for|fore": "4",
+    "forgone|foregone": ["4", "g"],
+})
 
 keys = {}
 keys.update(f_keys)
@@ -83,7 +89,7 @@ keys.update(simple_keys)
 keys.update(symbols)
 keys.update(alphabet)
 keys.update(digits)
-keys.update({"airspace": ["a", "Space"]})
+keys.update(homophones)
 
 modifiers = normalise_keys({
     "command": "Cmd",
