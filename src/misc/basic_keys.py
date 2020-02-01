@@ -82,6 +82,7 @@ keys.update(simple_keys)
 keys.update(symbols)
 keys.update(alphabet)
 keys.update(digits)
+keys.update({"airspace": ["a", "Space"]})
 
 modifiers = normalise_keys({
     "command": "Cmd",
@@ -94,12 +95,22 @@ modifiers = normalise_keys({
 def press_key_with_modifiers(m):
     mods = [modifiers[mod] for mod in m['modifiers']]
     key = keys[m['keys'][0]]
-    press(" ".join(mods + [key]))
+    if isinstance(key, str):
+        press(" ".join(mods + [key]))
+    elif isinstance(key, list):
+        press(" ".join(mods + [key[0]]))
+        for k in key[1:]:
+            press(k)
 
 
 def press_keys(m):
     for key in m['keys']:
-        press(keys[key])
+        mapping = keys[key]
+        if isinstance(mapping, str):
+            press(mapping)
+        elif isinstance(mapping, list):
+            for k in mapping:
+                press(k)
 
 
 ctx = Context("basic_keys")
