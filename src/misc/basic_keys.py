@@ -13,6 +13,7 @@ default_alphabet_words = talon_alphabet_words.replace('gust', 'gone')
 alphabet_keys = default_alphabet_words.split()
 
 alphabet = dict(zip(alphabet_keys, string.ascii_lowercase))
+alphabet.update({"are": "a"})
 
 f_keys = {f"F{i}": f"F{i}" for i in range(1, 13)}
 
