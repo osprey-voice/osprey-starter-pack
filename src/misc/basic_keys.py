@@ -42,7 +42,7 @@ symbols = normalise_keys({
     "dot|period": ".",
     "slash|forward slash": "/",
     "semicolon|semi": ";",
-    "quote|single quote": "'",
+    "quote|single quote|apostrophe": "'",
     "square|l square|open square|bracket|l bracket|open bracket": "[",
     "r square|are square|close square|r bracket|are bracket|close bracket": "]",
     "backslash": "\\",
