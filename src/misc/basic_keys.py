@@ -100,8 +100,8 @@ modifiers = normalise_keys({
 
 
 def press_key_with_modifiers(m):
-    mods = [modifiers[mod] for mod in m['modifiers']]
-    key = keys[m['keys'][0]]
+    mods = [modifiers[mod.lower()] for mod in m['modifiers']]
+    key = keys[m['keys'][0].lower()]
     if isinstance(key, str):
         press(" ".join(mods + [key]))
     elif isinstance(key, list):
@@ -112,7 +112,7 @@ def press_key_with_modifiers(m):
 
 def press_keys(m):
     for key in m['keys']:
-        mapping = keys[key]
+        mapping = keys[key.lower()]
         if isinstance(mapping, str):
             press(mapping)
         elif isinstance(mapping, list):
