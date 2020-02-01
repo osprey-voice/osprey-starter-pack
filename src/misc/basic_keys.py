@@ -81,6 +81,10 @@ homophones = normalise_keys({
     "to|too": "2",
     "for|fore": "4",
     "forgone|foregone": ["4", "g"],
+    "son": "s",
+    "armpit": ["o", "p"],
+    "inc|ink": "y",
+    "con": "g",
 })
 
 keys = {}
