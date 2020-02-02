@@ -1,4 +1,4 @@
-from osprey.voice import Context, insert
+from osprey.voice import Context, insert, preferred_phrases
 
 ctx = Context("formatters")
 ctx.set_rules({
@@ -8,3 +8,5 @@ ctx.set_rules({
     "(phrase|praise) {phrase}": lambda m: insert(m['phrase'][0]),
     "sentence {phrase}": lambda m: insert(m['phrase'][0][0].upper() + m['phrase'][0][1:]),
 })
+
+preferred_phrases.add("phrase")
