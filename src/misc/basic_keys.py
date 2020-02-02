@@ -75,16 +75,25 @@ symbols = normalise_keys({
 
 digits = {str(i): str(i) for i in range(11)}
 
-homophones = normalise_keys({
+key_homophones = normalise_keys({
     "are|there|their|they're": "a",
-    "airspace": ["a", "Space"],
+    "con|gun": "g",
+    "book": "l",
+    "on": "o",
+    "son": "s",
+    "best": "v",
+    "well": "w",
+    "inc|ink": "y",
+
     "to|too": "2",
     "for|fore": "4",
+
+    "airspace": ["a", "Space"],
     "forgone|foregone": ["4", "g"],
-    "son": "s",
     "armpit": ["o", "p"],
-    "inc|ink": "y",
-    "con": "g",
+    "concap": ["g", "c"],
+
+    "outlook": "Alt l",
 })
 
 keys = {}
@@ -93,7 +102,7 @@ keys.update(misc_keys)
 keys.update(symbols)
 keys.update(alphabet)
 keys.update(digits)
-keys.update(homophones)
+keys.update(key_homophones)
 
 modifiers = normalise_keys({
     "command": "Cmd",
@@ -102,9 +111,17 @@ modifiers = normalise_keys({
     "alt|option": "Alt",
 })
 
+modifier_homophones = normalise_keys({
+    "old|ulta|oat|oats": "Alt",
+})
+
+modifiers_with_homophones = {}
+modifiers_with_homophones.update(modifiers)
+modifiers_with_homophones.update(modifier_homophones)
+
 
 def press_key_with_modifiers(m):
-    mods = [modifiers[mod.lower()] for mod in m['modifiers']]
+    mods = [modifiers_with_homophones[mod.lower()] for mod in m['modifiers']]
     key = keys[m['keys'][0].lower()]
     if isinstance(key, str):
         press(" ".join(mods + [key]))
@@ -131,12 +148,13 @@ ctx.set_rules({
 })
 ctx.set_lists({
     "keys": keys.keys(),
-    "modifiers": modifiers.keys(),
+    "modifiers": modifiers_with_homophones.keys(),
 })
 
 preferred_phrases.update(set(alphabet_keys))
 preferred_phrases.update(set(misc_keys.keys()))
 preferred_phrases.update(set(symbols.keys()))
-preferred_phrases.update(set(modifiers.keys()))
 preferred_phrases.update(set(function_keys.keys()))
 preferred_phrases.update(set(digits.keys()))
+
+preferred_phrases.update(set(modifiers.keys()))
