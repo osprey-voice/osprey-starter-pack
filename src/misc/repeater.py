@@ -1,4 +1,4 @@
-from osprey.voice import Context, repeat
+from osprey.voice import Context, repeat, preferred_phrases
 
 digits = [str(n) for n in range(2, 100)]
 
@@ -9,3 +9,5 @@ ctx.set_rules({
 ctx.set_lists({
     "digits": digits,
 })
+
+preferred_phrases.update({"repeat"})

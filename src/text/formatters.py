@@ -9,4 +9,4 @@ ctx.set_rules({
     "sentence {phrase}": lambda m: insert(m['phrase'][0][0].upper() + m['phrase'][0][1:]),
 })
 
-preferred_phrases.add("phrase")
+preferred_phrases.update({"upper", "lower", "word", "phrase", "sentence"})

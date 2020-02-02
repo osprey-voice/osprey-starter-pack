@@ -1,6 +1,6 @@
 import string
 
-from osprey.voice import Context, press, insert
+from osprey.voice import Context, press, insert, preferred_phrases
 
 from ..utils import normalise_keys
 
@@ -14,9 +14,9 @@ alphabet_keys = default_alphabet_words.split()
 
 alphabet = dict(zip(alphabet_keys, string.ascii_lowercase))
 
-f_keys = {f"F{i}": f"F{i}" for i in range(1, 13)}
+function_keys = {f"F{i}": f"F{i}" for i in range(1, 13)}
 
-simple_keys = normalise_keys({
+misc_keys = normalise_keys({
     "left|go left": "Left",
     "right|go right": "Right",
     "up|go up": "Up",
@@ -73,7 +73,7 @@ symbols = normalise_keys({
     "r paren|are paren|close paren": ")",
 })
 
-digits = {str(i): str(i) for i in range(10)}
+digits = {str(i): str(i) for i in range(11)}
 
 homophones = normalise_keys({
     "are|there|their|they're": "a",
@@ -88,8 +88,8 @@ homophones = normalise_keys({
 })
 
 keys = {}
-keys.update(f_keys)
-keys.update(simple_keys)
+keys.update(function_keys)
+keys.update(misc_keys)
 keys.update(symbols)
 keys.update(alphabet)
 keys.update(digits)
@@ -133,3 +133,10 @@ ctx.set_lists({
     "keys": keys.keys(),
     "modifiers": modifiers.keys(),
 })
+
+preferred_phrases.update(set(alphabet_keys))
+preferred_phrases.update(set(misc_keys.keys()))
+preferred_phrases.update(set(symbols.keys()))
+preferred_phrases.update(set(modifiers.keys()))
+preferred_phrases.update(set(function_keys.keys()))
+preferred_phrases.update(set(digits.keys()))
