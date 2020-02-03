@@ -10,9 +10,9 @@ twoshea_alphabet_words = talon_alphabet_words.replace('drum', 'dip').replace(
     'fine', 'far').replace('gust', 'gone').replace('made', 'mad')
 default_alphabet_words = talon_alphabet_words.replace('gust', 'gone')
 
-alphabet_keys = default_alphabet_words.split()
+alphabet_words = default_alphabet_words
 
-alphabet = dict(zip(alphabet_keys, string.ascii_lowercase))
+alphabet = dict(zip(alphabet_words.split(), string.ascii_lowercase))
 
 function_keys = {f"F{i}": f"F{i}" for i in range(1, 13)}
 
@@ -33,7 +33,7 @@ misc_keys = normalise_keys({
     "page down": "PageDown",
 })
 
-symbols = normalise_keys({
+punctuation = normalise_keys({
     # no shift required
     "tick|back tick|backtick": "`",
     "minus|dash|hyphen": "-",
@@ -98,7 +98,7 @@ key_homophones = normalise_keys({
 keys = {}
 keys.update(function_keys)
 keys.update(misc_keys)
-keys.update(symbols)
+keys.update(punctuation)
 keys.update(alphabet)
 keys.update(digits)
 keys.update(key_homophones)
@@ -151,9 +151,9 @@ ctx.set_lists({
     "modifiers": modifiers_with_homophones.keys(),
 })
 
-preferred_phrases.update(set(alphabet_keys))
+preferred_phrases.update(set(alphabet.keys()))
 preferred_phrases.update(set(misc_keys.keys()))
-preferred_phrases.update(set(symbols.keys()))
+preferred_phrases.update(set(punctuation.keys()))
 preferred_phrases.update(set(function_keys.keys()))
 preferred_phrases.update(set(digits.keys()))
 
