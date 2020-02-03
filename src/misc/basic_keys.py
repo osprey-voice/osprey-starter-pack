@@ -77,12 +77,14 @@ digits = {str(i): str(i) for i in range(10)}
 
 key_homophones = normalise_keys({
     "are|there|their|they're": "a",
+    "find": "f",
     "con|gun": "g",
-    "book": "l",
+    "jewelry": "j",
+    "book|work": "l",
     "on": "o",
     "son": "s",
     "best": "v",
-    "well": "w",
+    "well|will": "w",
     "inc|ink": "y",
 
     "airspace": ["a", "Space"],
