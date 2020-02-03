@@ -2,7 +2,7 @@
 
 A starter pack of [Osprey](https://github.com/osprey-voice/osprey) configuration scripts and voice commands.
 
-Includes commands ported from [talon_community](https://github.com/dwiel/talon_community) and [2shea's configs](https://github.com/2shea/talon_configs).
+Includes commands ported from [talon_community](https://github.com/dwiel/talon_community), [2shea's configs](https://github.com/2shea/talon_configs), and the official [Talon examples](https://github.com/talonvoice/examples).
 
 ## Installation
 
