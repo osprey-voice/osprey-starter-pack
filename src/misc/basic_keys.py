@@ -78,10 +78,11 @@ digits = {str(i): str(i) for i in range(10)}
 
 key_homophones = normalise_keys({
     "are|there|their|they're": "a",
+    "caps": "c",
     "find": "f",
-    "con|gun": "g",
-    "set": "i",
-    "jewelry": "j",
+    "con|gun|g1": "g",
+    "set|it": "i",
+    "jewelry|tree|juri": "j",
     "book|work": "l",
     "on": "o",
     "son": "s",
@@ -91,6 +92,7 @@ key_homophones = normalise_keys({
 
     "but": ".",
 
+    "archery": ["a", "j"],
     "capcap": ["c", "c"],
     "airspace": ["a", "Space"],
     "forgone|foregone": ["4", "g"],
