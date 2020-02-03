@@ -8,5 +8,9 @@ ctx.set_rules({
     "(phrase|praise) {phrase}": lambda m: insert(m['phrase'][0]),
     "sentence {phrase}": lambda m: insert(m['phrase'][0][0].upper() + m['phrase'][0][1:]),
 })
+ctx.set_regexes({
+    'word': r'\S+',
+    'phrase': r'\S+(\s\S+)*',
+})
 
 preferred_phrases.update({"upper", "lower", "word", "phrase", "sentence"})

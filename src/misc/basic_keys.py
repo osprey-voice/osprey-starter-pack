@@ -2,7 +2,7 @@ import string
 
 from osprey.voice import Context, press, insert, preferred_phrases
 
-from ..utils import normalise_keys
+from ..common import normalise_keys, digit_homophones
 
 
 talon_alphabet_words = "air bat cap drum each fine gust harp sit jury crunch look made near odd pit quench red sun trap urge vest whale plex yank zip"
@@ -73,7 +73,7 @@ symbols = normalise_keys({
     "r paren|are paren|close paren": ")",
 })
 
-digits = {str(i): str(i) for i in range(11)}
+digits = {str(i): str(i) for i in range(10)}
 
 key_homophones = normalise_keys({
     "are|there|their|they're": "a",
@@ -84,9 +84,6 @@ key_homophones = normalise_keys({
     "best": "v",
     "well": "w",
     "inc|ink": "y",
-
-    "to|too": "2",
-    "for|fore": "4",
 
     "airspace": ["a", "Space"],
     "forgone|foregone": ["4", "g"],
@@ -103,6 +100,7 @@ keys.update(symbols)
 keys.update(alphabet)
 keys.update(digits)
 keys.update(key_homophones)
+keys.update(digit_homophones)
 
 modifiers = normalise_keys({
     "command": "Cmd",

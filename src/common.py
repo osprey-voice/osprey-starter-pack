@@ -4,3 +4,11 @@ def normalise_keys(dict):
         for cmd in k.split('|'):
             normalised_dict[cmd] = v
     return normalised_dict
+
+
+digit_homophones = normalise_keys({
+    "won": "1",
+    "to|too": "2",
+    "for|fore": "4",
+    "ate": "8",
+})
