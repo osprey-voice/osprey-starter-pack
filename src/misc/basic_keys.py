@@ -8,7 +8,7 @@ from ..common import normalise_keys, digit_homophones
 talon_alphabet_words = "air bat cap drum each fine gust harp sit jury crunch look made near odd pit quench red sun trap urge vest whale plex yank zip"
 twoshea_alphabet_words = talon_alphabet_words.replace('drum', 'dip').replace(
     'fine', 'far').replace('gust', 'gone').replace('made', 'mad')
-default_alphabet_words = talon_alphabet_words.replace('gust', 'gone')
+default_alphabet_words = talon_alphabet_words.replace('gust', 'gone').replace('crunch', 'keep')
 
 alphabet_words = default_alphabet_words
 
