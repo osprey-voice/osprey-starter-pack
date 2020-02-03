@@ -21,6 +21,7 @@ misc_keys = normalise_keys({
     "right|go right": "Right",
     "up|go up": "Up",
     "down|go down": "Down",
+    "caps lock": "CapsLock",
     "backspace": "Backspace",
     "delete|forward delete": "Delete",
     "space": "Space",
