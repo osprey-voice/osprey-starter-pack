@@ -86,6 +86,7 @@ key_homophones = normalise_keys({
     "book|work": "l",
     "on": "o",
     "son": "s",
+    "purge": "u",
     "best": "v",
     "well|will|wheel": "w",
     "inc|ink": "y",
@@ -100,6 +101,7 @@ key_homophones = normalise_keys({
     "concap": ["g", "c"],
 
     "outlook": "Alt l",
+    "shiftcon": "Shift g",
 })
 
 keys = {}
@@ -138,20 +140,19 @@ def press_key_with_modifiers(m):
             press(k)
 
 
-def press_keys(m):
-    for key in m['keys']:
-        mapping = keys[key.lower()]
-        if isinstance(mapping, str):
-            press(mapping)
-        elif isinstance(mapping, list):
-            for k in mapping:
-                press(k)
+def press_key(m):
+    key = keys[m['keys'][0].lower()]
+    if isinstance(key, str):
+        press(key)
+    elif isinstance(key, list):
+        for k in key:
+            press(k)
 
 
 ctx = Context("basic_keys")
 ctx.set_rules({
     "{modifiers+}{keys}": press_key_with_modifiers,
-    "{keys+}": press_keys,
+    "{keys}": press_key,
 })
 ctx.set_lists({
     "keys": keys.keys(),
