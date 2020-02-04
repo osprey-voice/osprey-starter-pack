@@ -82,8 +82,8 @@ punctuation = normalise_keys({
     "caret": "^",
     "ampersand|amper": "&",
     "star|asterisk": "*",
-    "paren|open paren": "(",
-    "close paren": ")",
+    "paren|open paren|left paren": "(",
+    "close paren|right paren": ")",
 })
 
 digits = {str(i): str(i) for i in range(10)}
