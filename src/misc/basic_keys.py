@@ -8,7 +8,8 @@ from ..common import normalise_keys, digit_homophones
 talon_alphabet_words = "air bat cap drum each fine gust harp sit jury crunch look made near odd pit quench red sun trap urge vest whale plex yank zip"
 twoshea_alphabet_words = talon_alphabet_words.replace('drum', 'dip').replace(
     'fine', 'far').replace('gust', 'gone').replace('made', 'mad')
-default_alphabet_words = talon_alphabet_words.replace('gust', 'gone').replace('crunch', 'keep')
+default_alphabet_words = talon_alphabet_words.replace('bat', 'big').replace(
+    'cap', 'cat').replace('drum', 'dip').replace('gust', 'gate').replace('crunch', 'king').replace('fine', 'feed').replace('jury', 'joke').replace('whale', 'week')
 
 alphabet_words = default_alphabet_words
 
@@ -22,12 +23,12 @@ misc_keys = normalise_keys({
     "up|go up": "Up",
     "down|go down": "Down",
     "caps lock": "CapsLock",
-    "backspace": "Backspace",
+    "back|backspace": "Backspace",
     "delete|forward delete": "Delete",
     "space": "Space",
     "tab": "Tab",
     "enter": "Enter",
-    "escape": "Escape",
+    "cape|escape": "Escape",
     "home": "Home",
     "end": "End",
     "page up": "PageUp",
@@ -44,8 +45,8 @@ punctuation = normalise_keys({
     "slash|forward slash": "/",
     "semicolon|semi": ";",
     "quote|single quote|apostrophe": "'",
-    "square|l square|open square|bracket|l bracket|open bracket": "[",
-    "r square|are square|close square|r bracket|are bracket|close bracket": "]",
+    "square|open square|bracket|open bracket": "[",
+    "close square|close bracket": "]",
     "backslash": "\\",
 
     # shift required
@@ -57,8 +58,8 @@ punctuation = normalise_keys({
     "question|question mark": "?",
     "colon": ":",
     "double quote": '"',
-    "brace|l brace|open brace": "{",
-    "r brace|are brace|close brace": "}",
+    "brace|open brace|curly|open curly": "{",
+    "close brace|close curly": "}",
     "pipe|bar": "|",
 
     # above numbers
@@ -70,38 +71,51 @@ punctuation = normalise_keys({
     "caret": "^",
     "ampersand|amper": "&",
     "star|asterisk": "*",
-    "paren|l paren|open paren": "(",
-    "r paren|are paren|close paren": ")",
+    "paren|open paren": "(",
+    "close paren": ")",
 })
 
 digits = {str(i): str(i) for i in range(10)}
 
 key_homophones = normalise_keys({
     "are|there|their|they're": "a",
-    "caps": "c",
-    "find": "f",
-    "con|gun|g1": "g",
-    "set|it": "i",
-    "jewelry|tree|juri": "j",
+    "cats": "c",
+    "peach|itch|eat|eats": "e",
+    "gates": "g",
+    "haarp": "h",
+    "set|it|suit|suits|city": "i",
+    "stroke": "j",
     "book|work": "l",
-    "on": "o",
+    "maid": "m",
+    "on|squad": "o",
+    "pits|pitt": "p",
+    "read": "r",
     "son": "s",
+    "trapp": "t",
     "purge": "u",
     "best": "v",
-    "well|will|wheel": "w",
     "inc|ink": "y",
 
+    "write": "Right",
+    "d1": "Down",
+    "pack": "Backspace",
+    "keep": "Escape",
+    "picture up": "PageUp",
+    "page d1": "PageDown",
+
+    "thick|tech|tic|pic": "`",
+    "tilda": "~",
     "but": ".",
+    "quotes": "'",
 
     "archery": ["a", "j"],
     "capcap": ["c", "c"],
     "airspace": ["a", "Space"],
-    "forgone|foregone": ["4", "g"],
     "armpit": ["o", "p"],
-    "concap": ["g", "c"],
+    "cromwell": ["d", "w"],
 
     "outlook": "Alt l",
-    "shiftcon": "Shift g",
+    "altitude": "Alt 2",
 })
 
 keys = {}
@@ -121,7 +135,7 @@ modifiers = normalise_keys({
 })
 
 modifier_homophones = normalise_keys({
-    "old|ulta|oat|oats": "Alt",
+    "old|ulta|oat|oats|oak": "Alt",
 })
 
 modifiers_with_homophones = {}

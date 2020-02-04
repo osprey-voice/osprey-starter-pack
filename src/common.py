@@ -9,6 +9,6 @@ def normalise_keys(dict):
 digit_homophones = normalise_keys({
     "won": "1",
     "to|too": "2",
-    "for|fore": "4",
+    "for|fore|form": "4",
     "ate": "8",
 })
