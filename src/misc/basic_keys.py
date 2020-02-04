@@ -6,10 +6,21 @@ from ..common import normalise_keys, digit_homophones
 
 
 talon_alphabet_words = "air bat cap drum each fine gust harp sit jury crunch look made near odd pit quench red sun trap urge vest whale plex yank zip"
-twoshea_alphabet_words = talon_alphabet_words.replace('drum', 'dip').replace(
-    'fine', 'far').replace('gust', 'gone').replace('made', 'mad')
-default_alphabet_words = talon_alphabet_words.replace('bat', 'big').replace(
-    'cap', 'cat').replace('drum', 'dip').replace('gust', 'gate').replace('crunch', 'king').replace('fine', 'feed').replace('jury', 'joke').replace('whale', 'week')
+twoshea_alphabet_words = talon_alphabet_words \
+    .replace('drum', 'dip') \
+    .replace('fine', 'far') \
+    .replace('gust', 'gone') \
+    .replace('made', 'mad')
+default_alphabet_words = talon_alphabet_words \
+    .replace('air', 'art') \
+    .replace('bat', 'big') \
+    .replace('cap', 'cat') \
+    .replace('drum', 'dip') \
+    .replace('gust', 'gate') \
+    .replace('crunch', 'kite') \
+    .replace('fine', 'feed') \
+    .replace('jury', 'joke') \
+    .replace('whale', 'week')
 
 alphabet_words = default_alphabet_words
 
@@ -18,10 +29,10 @@ alphabet = dict(zip(alphabet_words.split(), string.ascii_lowercase))
 function_keys = {f"F{i}": f"F{i}" for i in range(1, 13)}
 
 misc_keys = normalise_keys({
-    "left|go left": "Left",
-    "right|go right": "Right",
-    "up|go up": "Up",
-    "down|go down": "Down",
+    "go left": "Left",
+    "go right": "Right",
+    "go up": "Up",
+    "go down": "Down",
     "caps lock": "CapsLock",
     "back|backspace": "Backspace",
     "delete|forward delete": "Delete",
@@ -45,21 +56,21 @@ punctuation = normalise_keys({
     "slash|forward slash": "/",
     "semicolon|semi": ";",
     "quote|single quote|apostrophe": "'",
-    "square|open square|bracket|open bracket": "[",
-    "close square|close bracket": "]",
+    "square|open square|left square|bracket|open bracket|left bracket": "[",
+    "close square|right square|close bracket|right bracket": "]",
     "backslash": "\\",
 
     # shift required
     "tilde": "~",
     "underscore|under score": "_",
     "plus": "+",
-    "angle|l angle|open angle|less than": "<",
-    "r angle|are angle|close angle|greater than": ">",
+    "angle|open angle|left angle|less than": "<",
+    "close angle|right angle|greater than": ">",
     "question|question mark": "?",
     "colon": ":",
     "double quote": '"',
-    "brace|open brace|curly|open curly": "{",
-    "close brace|close curly": "}",
+    "brace|open brace|left brace|curly|open curly|left curly": "{",
+    "close brace|right brace|close curly|right curly": "}",
     "pipe|bar": "|",
 
     # above numbers
@@ -78,16 +89,15 @@ punctuation = normalise_keys({
 digits = {str(i): str(i) for i in range(10)}
 
 key_homophones = normalise_keys({
-    "are|there|their|they're": "a",
     "cats": "c",
-    "peach|itch|eat|eats": "e",
+    "peach|itch|eat|eats|beach": "e",
     "gates": "g",
     "haarp": "h",
-    "set|it|suit|suits|city": "i",
+    "set|it|suit|suits|city|sits": "i",
     "stroke": "j",
     "book|work": "l",
     "maid": "m",
-    "on|squad": "o",
+    "on|squad|pod": "o",
     "pits|pitt": "p",
     "read": "r",
     "son": "s",
