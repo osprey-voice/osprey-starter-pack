@@ -154,8 +154,8 @@ modifiers_with_homophones.update(modifiers)
 modifiers_with_homophones.update(modifier_homophones)
 
 
-def press_key_with_modifiers(m):
-    mods = [modifiers_with_homophones[mod.lower()] for mod in m['modifiers']]
+def press_key(m):
+    mods = [modifiers_with_homophones[mod.lower()] for mod in m['modifiers']] if 'modifiers' in m else []
     key = keys[m['keys'][0].lower()]
     if isinstance(key, str):
         press(" ".join(mods + [key]))
@@ -165,19 +165,9 @@ def press_key_with_modifiers(m):
             press(k)
 
 
-def press_key(m):
-    key = keys[m['keys'][0].lower()]
-    if isinstance(key, str):
-        press(key)
-    elif isinstance(key, list):
-        for k in key:
-            press(k)
-
-
 ctx = Context("basic_keys")
 ctx.set_rules({
-    "{modifiers+}{keys}": press_key_with_modifiers,
-    "{keys}": press_key,
+    "{modifiers*}{keys}": press_key,
 })
 ctx.set_lists({
     "keys": keys.keys(),
