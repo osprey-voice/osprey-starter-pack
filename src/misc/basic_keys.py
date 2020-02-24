@@ -15,12 +15,14 @@ default_alphabet_words = talon_alphabet_words \
     .replace('air', 'art') \
     .replace('bat', 'big') \
     .replace('cap', 'cat') \
-    .replace('drum', 'dip') \
+    .replace('drum', 'dark') \
+    .replace('each', 'eat') \
     .replace('gust', 'gate') \
     .replace('crunch', 'kite') \
     .replace('fine', 'feed') \
     .replace('jury', 'joke') \
-    .replace('whale', 'week')
+    .replace('whale', 'week') \
+    .replace('yank', 'yard')
 
 alphabet_words = default_alphabet_words
 
@@ -62,7 +64,7 @@ punctuation = normalise_keys({
 
     # shift required
     "tilde": "~",
-    "underscore|under score": "_",
+    "underscore|under score|under": "_",
     "plus": "+",
     "angle|open angle|left angle|less than": "<",
     "close angle|right angle|greater than": ">",
@@ -80,7 +82,7 @@ punctuation = normalise_keys({
     "dollar|dollar sign": "$",
     "percent|percent sign": "%",
     "caret": "^",
-    "ampersand|amper": "&",
+    "ampersand": "&",
     "star|asterisk": "*",
     "paren|open paren|left paren": "(",
     "close paren|right paren": ")",
@@ -104,6 +106,7 @@ key_homophones = normalise_keys({
     "trapp": "t",
     "purge": "u",
     "best": "v",
+    "weak": "w",
     "inc|ink": "y",
 
     "write": "Right",
@@ -112,15 +115,18 @@ key_homophones = normalise_keys({
     "keep": "Escape",
     "picture up": "PageUp",
     "page d1": "PageDown",
+    "hunter|center": "Enter",
 
     "thick|tech|tic|pic": "`",
     "tilda": "~",
     "but": ".",
     "quotes": "'",
 
+    "backpack": ["Backspace", "Backspace"],
     "archery": ["a", "j"],
     "capcap": ["c", "c"],
     "airspace": ["a", "Space"],
+    "redgate": ["r", "g"],
     "armpit": ["o", "p"],
     "cromwell": ["d", "w"],
 
