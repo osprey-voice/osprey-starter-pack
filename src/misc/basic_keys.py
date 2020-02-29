@@ -5,28 +5,36 @@ from osprey.voice import Context, press, insert, preferred_phrases
 from ..common import normalise_keys, digit_homophones, words_to_digits
 
 
-talon_alphabet_words = "air bat cap drum each fine gust harp sit jury crunch look made near odd pit quench red sun trap urge vest whale plex yank zip"
-twoshea_alphabet_words = talon_alphabet_words \
-    .replace('drum', 'dip') \
-    .replace('fine', 'far') \
-    .replace('gust', 'gone') \
-    .replace('made', 'mad')
-default_alphabet_words = talon_alphabet_words \
-    .replace('air', 'art') \
-    .replace('bat', 'big') \
-    .replace('cap', 'cat') \
-    .replace('drum', 'dark') \
-    .replace('each', 'eat') \
-    .replace('gust', 'gate') \
-    .replace('crunch', 'kite') \
-    .replace('fine', 'feed') \
-    .replace('jury', 'joke') \
-    .replace('whale', 'week') \
-    .replace('yank', 'yard')
+alphabet_words = [
+    'art',
+    'big',
+    'cat',
+    'dark',
+    'eat',
+    'food',
+    'good',
+    'hook',
+    'sit',
+    'juke',
+    'kite',
+    'look',
+    'made',
+    'near',
+    'odd',
+    'poke',
+    'quite',
+    'red',
+    'sun',
+    'trap',
+    'urge',
+    'vest',
+    'week',
+    'plex',
+    'yard',
+    'zip',
+]
 
-alphabet_words = default_alphabet_words
-
-alphabet = dict(zip(alphabet_words.split(), string.ascii_lowercase))
+alphabet = dict(zip(alphabet_words, string.ascii_lowercase))
 
 function_keys = {f"F{i}": f"F{i}" for i in range(1, 13)}
 
@@ -91,36 +99,34 @@ punctuation = normalise_keys({
 digits = {str(i): str(i) for i in range(10)}
 
 key_homophones = normalise_keys({
-    "cats": "c",
-    "peach|itch|eat|eats|beach": "e",
-    "gates": "g",
-    "haarp": "h",
+    "cats|cap|caps": "c",
+    "eats": "e",
+    "goods": "g",
     "set|it|suit|suits|city|sits": "i",
-    "stroke": "j",
     "book|work": "l",
     "maid": "m",
     "on|squad|pod": "o",
-    "pits|pitt": "p",
+    "polk": "p",
     "read": "r",
     "son": "s",
-    "trapp": "t",
+    "trapp|trump": "t",
     "purge": "u",
-    "best": "v",
     "weak": "w",
-    "inc|ink": "y",
 
     "write": "Right",
     "d1": "Down",
     "pack": "Backspace",
     "keep": "Escape",
-    "picture up": "PageUp",
+    "picture up|peach up": "PageUp",
     "page d1": "PageDown",
     "hunter|center": "Enter",
+    "ultra": "Alt",
 
     "thick|tech|tic|pic": "`",
     "tilda": "~",
     "but": ".",
     "quotes": "'",
+    "colin": ":",
 
     "backpack": ["Backspace", "Backspace"],
     "archery": ["a", "j"],
