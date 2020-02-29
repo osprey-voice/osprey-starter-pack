@@ -171,13 +171,23 @@ def press_key(m):
             press(k)
 
 
+def press_punctuation(m):
+    mods = [modifiers_with_homophones[mod.lower()] for mod in m['modifiers']] if 'modifiers' in m else []
+    key = m['punctuation'][0]
+    press(" ".join(mods + [key]))
+
+
 ctx = Context("basic_keys")
 ctx.set_rules({
     "{modifiers*}{keys}": press_key,
+    "{modifiers*}{punctuation}": press_punctuation,
 })
 ctx.set_lists({
     "keys": keys.keys(),
     "modifiers": modifiers_with_homophones.keys(),
+})
+ctx.set_regexes({
+    "punctuation": '[' + ''.join(string.punctuation) + ']',
 })
 
 preferred_phrases.update(set(alphabet.keys()))
