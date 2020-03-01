@@ -60,7 +60,7 @@ punctuation = normalise_keys({
     # no shift required
     "tick|back tick|backtick": "`",
     "minus|dash|hyphen": "-",
-    "equals": "=",
+    "equals|equal": "=",
     "comma": ",",
     "dot|period": ".",
     "slash|forward slash": "/",
@@ -78,7 +78,7 @@ punctuation = normalise_keys({
     "close angle|right angle|greater than": ">",
     "question|question mark": "?",
     "colon": ":",
-    "double quote": '"',
+    "double quote|double quotes": '"',
     "brace|open brace|left brace|curly|open curly|left curly": "{",
     "close brace|right brace|close curly|right curly": "}",
     "pipe|bar": "|",
