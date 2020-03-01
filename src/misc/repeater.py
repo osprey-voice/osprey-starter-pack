@@ -13,12 +13,12 @@ def convert_number(s):
     return int(s)
 
 
-ctx = Context("repeater")
+ctx = Context('repeater')
 ctx.set_rules({
-    "repeat {number}": lambda m: repeat(convert_number(m["number"][0]) - 1),
+    'repeat {number}': lambda m: repeat(convert_number(m['number'][0]) - 1),
 })
 ctx.set_regexes({
-    "number": number_regex,
+    'number': number_regex,
 })
 
-preferred_phrases.update({"repeat"})
+preferred_phrases.update({'repeat'})
