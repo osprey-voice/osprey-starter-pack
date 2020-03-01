@@ -20,7 +20,7 @@ alphabet_words = [
     'look',
     'made',
     'near',
-    'odd',
+    'or',
     'poke',
     'quite',
     'red',
@@ -30,7 +30,7 @@ alphabet_words = [
     'vest',
     'week',
     'plex',
-    'yard',
+    'york',
     'zip',
 ]
 
@@ -105,7 +105,6 @@ key_homophones = normalise_keys({
     "set|it|suit|suits|city|sits": "i",
     "book|work": "l",
     "maid": "m",
-    "on|squad|pod": "o",
     "polk": "p",
     "read": "r",
     "son": "s",
@@ -120,8 +119,8 @@ key_homophones = normalise_keys({
     "picture up|peach up": "PageUp",
     "page d1": "PageDown",
     "hunter|center": "Enter",
-    "ultra": "Alt",
 
+    "carrot": "^",
     "thick|tech|tic|pic": "`",
     "tilda": "~",
     "but": ".",
@@ -129,15 +128,6 @@ key_homophones = normalise_keys({
     "colin": ":",
 
     "backpack": ["Backspace", "Backspace"],
-    "archery": ["a", "j"],
-    "capcap": ["c", "c"],
-    "airspace": ["a", "Space"],
-    "redgate": ["r", "g"],
-    "armpit": ["o", "p"],
-    "cromwell": ["d", "w"],
-
-    "outlook": "Alt l",
-    "altitude": "Alt 2",
 })
 
 keys = {}
@@ -154,11 +144,10 @@ modifiers = normalise_keys({
     "command": "Cmd",
     "control|troll": "Ctrl",
     "shift": "Shift",
-    "alt|option": "Alt",
+    "option": "Alt",
 })
 
 modifier_homophones = normalise_keys({
-    "old|ulta|oat|oats|oak": "Alt",
 })
 
 modifiers_with_homophones = {}
