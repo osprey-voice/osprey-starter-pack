@@ -144,6 +144,8 @@ modifiers = normalise_keys({
     'command': 'Cmd',
     'control|troll': 'Ctrl',
     'shift': 'Shift',
+    # We don't add the word 'alt' since it is hard to say, not every engine supports it, and the
+    # engines that do support it have a hard time of identifying it.
     'option': 'Alt',
 })
 
