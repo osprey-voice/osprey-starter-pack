@@ -2,7 +2,7 @@ import string
 
 from osprey.voice import Context, press, insert, preferred_phrases
 
-from ..common import normalise_keys, digit_homophones, words_to_digits
+from ..common import normalise_keys, words_to_digits
 
 
 alphabet_words = [
@@ -98,46 +98,12 @@ punctuation = normalise_keys({
 
 digits = {str(i): str(i) for i in range(10)}
 
-key_homophones = normalise_keys({
-    'cats|cap|caps': 'c',
-    'eats': 'e',
-    'goods': 'g',
-    'set|it|suit|suits|city|sits': 'i',
-    'book|work': 'l',
-    'maid': 'm',
-    'polk': 'p',
-    'read': 'r',
-    'son': 's',
-    'trapp|trump': 't',
-    'purge': 'u',
-    'weak': 'w',
-
-    'write': 'Right',
-    'd1': 'Down',
-    'pack': 'Backspace',
-    'keep': 'Escape',
-    'picture up|peach up': 'PageUp',
-    'page d1': 'PageDown',
-    'hunter|center': 'Enter',
-
-    'carrot': '^',
-    'thick|tech|tic|pic': '`',
-    'tilda': '~',
-    'but': '.',
-    'quotes': '\'',
-    'colin': ':',
-
-    'backpack': ['Backspace', 'Backspace'],
-})
-
 keys = {}
 keys.update(function_keys)
 keys.update(misc_keys)
 keys.update(punctuation)
 keys.update(alphabet)
 keys.update(digits)
-keys.update(key_homophones)
-keys.update(digit_homophones)
 keys.update(words_to_digits)
 
 modifiers = normalise_keys({
@@ -149,16 +115,9 @@ modifiers = normalise_keys({
     'option': 'Alt',
 })
 
-modifier_homophones = normalise_keys({
-})
-
-modifiers_with_homophones = {}
-modifiers_with_homophones.update(modifiers)
-modifiers_with_homophones.update(modifier_homophones)
-
 
 def press_key(m):
-    mods = [modifiers_with_homophones[mod.lower()] for mod in m['modifiers']] if 'modifiers' in m else []
+    mods = [modifiers[mod.lower()] for mod in m['modifiers']] if 'modifiers' in m else []
     key = keys[m['keys'][0].lower()]
     if isinstance(key, str):
         press(' '.join(mods + [key]))
@@ -169,7 +128,7 @@ def press_key(m):
 
 
 def press_punctuation(m):
-    mods = [modifiers_with_homophones[mod.lower()] for mod in m['modifiers']] if 'modifiers' in m else []
+    mods = [modifiers[mod.lower()] for mod in m['modifiers']] if 'modifiers' in m else []
     key = m['punctuation'][0]
     press(' '.join(mods + [key]))
 
@@ -181,7 +140,7 @@ ctx.set_rules({
 })
 ctx.set_lists({
     'keys': keys.keys(),
-    'modifiers': modifiers_with_homophones.keys(),
+    'modifiers': modifiers.keys(),
 })
 ctx.set_regexes({
     'punctuation': '[' + ''.join(string.punctuation) + ']',

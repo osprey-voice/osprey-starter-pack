@@ -1,14 +1,12 @@
 from osprey.voice import Context, repeat, preferred_phrases
 
-from ..common import normalise_keys, digit_homophones, words_to_digits
+from ..common import normalise_keys, words_to_digits
 
-number_regex = r'(\d+|{})'.format('|'.join(list(digit_homophones.keys()) + list(words_to_digits.keys())))
+number_regex = r'(\d+|{})'.format('|'.join(list(words_to_digits.keys())))
 
 
 def convert_number(s):
-    if s in digit_homophones:
-        s = digit_homophones[s]
-    elif s in words_to_digits:
+    if s in words_to_digits:
         s = words_to_digits[s]
     return int(s)
 
