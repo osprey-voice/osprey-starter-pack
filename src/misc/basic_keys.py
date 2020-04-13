@@ -7,10 +7,10 @@ from ..common import normalise_keys, words_to_digits
 
 alphabet_words = [
     'art',
-    'big',
+    'bit',
     'cat',
     'dark',
-    'eat',
+    'each',
     'food',
     'good',
     'hook',
@@ -18,10 +18,10 @@ alphabet_words = [
     'juke',
     'kite',
     'look',
-    'made',
+    'mid',
     'near',
-    'or',
-    'poke',
+    'oak',
+    'port',
     'quite',
     'red',
     'sun',
@@ -39,13 +39,13 @@ alphabet = dict(zip(alphabet_words, string.ascii_lowercase))
 function_keys = {f'F{i}': f'F{i}' for i in range(1, 13)}
 
 misc_keys = normalise_keys({
-    'go left': 'Left',
-    'go right': 'Right',
-    'go up': 'Up',
-    'go down': 'Down',
+    'left': 'Left',
+    'right': 'Right',
+    'up': 'Up',
+    'down': 'Down',
     'caps lock': 'CapsLock',
     'back|backspace': 'Backspace',
-    'delete|forward delete': 'Delete',
+    'delete': 'Delete',
     'space': 'Space',
     'tab': 'Tab',
     'enter': 'Enter',
@@ -110,9 +110,7 @@ modifiers = normalise_keys({
     'command': 'Cmd',
     'control|troll': 'Ctrl',
     'shift': 'Shift',
-    # We don't add the word 'alt' since it is hard to say, not every engine supports it, and the
-    # engines that do support it have a hard time of identifying it.
-    'option': 'Alt',
+    'alt': 'Alt',
 })
 
 
