@@ -1,6 +1,6 @@
 import string
 
-from osprey.voice import Context, press, insert, preferred_phrases
+from osprey.voice import Context, press, insert
 
 from ..common import normalise_keys, words_to_digits
 
@@ -145,11 +145,3 @@ ctx.set_lists({
 ctx.set_regexes({
     'punctuation': '[' + ''.join(string.punctuation) + ']',
 })
-
-preferred_phrases.update(set(alphabet.keys()))
-preferred_phrases.update(set(misc_keys.keys()))
-preferred_phrases.update(set(punctuation.keys()))
-preferred_phrases.update(set(function_keys.keys()))
-preferred_phrases.update(set(digits.keys()))
-
-preferred_phrases.update(set(modifiers.keys()))

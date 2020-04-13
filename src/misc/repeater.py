@@ -1,4 +1,4 @@
-from osprey.voice import Context, repeat, preferred_phrases
+from osprey.voice import Context, repeat
 
 from ..common import normalise_keys, words_to_digits
 
@@ -18,5 +18,3 @@ ctx.set_rules({
 ctx.set_regexes({
     'number': number_regex,
 })
-
-preferred_phrases.update({'repeat'})

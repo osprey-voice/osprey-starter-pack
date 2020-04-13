@@ -1,6 +1,6 @@
 import string
 
-from osprey.voice import Context, insert, preferred_phrases
+from osprey.voice import Context, insert
 
 ctx = Context('formatters')
 ctx.set_rules({
@@ -15,5 +15,3 @@ ctx.set_regexes({
     'word': r'\S+',
     'phrase': r'\S+(\s\S+)*',
 })
-
-preferred_phrases.update({'upper', 'lower', 'word', 'phrase', 'sentence'})
