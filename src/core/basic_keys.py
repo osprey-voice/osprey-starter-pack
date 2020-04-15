@@ -13,7 +13,7 @@ alphabet_words = [
     'each',
     'food',
     'good',
-    'hook',
+    'hike',
     'sit',
     'juke',
     'kite',
