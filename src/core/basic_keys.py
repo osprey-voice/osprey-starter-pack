@@ -2,7 +2,7 @@ import string
 
 from osprey.voice import Context, press, insert
 
-from ..common import normalise_keys, words_to_digits
+from ..common import normalise_keys
 
 
 alphabet_words = [
@@ -104,7 +104,6 @@ keys.update(misc_keys)
 keys.update(punctuation)
 keys.update(alphabet)
 keys.update(digits)
-keys.update(words_to_digits)
 
 modifiers = normalise_keys({
     'command': 'Cmd',
@@ -115,31 +114,16 @@ modifiers = normalise_keys({
 
 
 def press_key(m):
-    mods = [modifiers[mod.lower()] for mod in m['modifiers']] if 'modifiers' in m else []
-    key = keys[m['keys'][0].lower()]
-    if isinstance(key, str):
-        press(' '.join(mods + [key]))
-    elif isinstance(key, list):
-        press(' '.join(mods + [key[0]]))
-        for k in key[1:]:
-            press(k)
-
-
-def press_punctuation(m):
-    mods = [modifiers[mod.lower()] for mod in m['modifiers']] if 'modifiers' in m else []
-    key = m['punctuation'][0]
+    mods = [modifiers[mod] for mod in m['modifiers']] if 'modifiers' in m else []
+    key = keys[m['keys'][0]]
     press(' '.join(mods + [key]))
 
 
 ctx = Context('basic_keys')
 ctx.set_rules({
-    '{modifiers*}{keys}': press_key,
-    '{modifiers*}{punctuation}': press_punctuation,
+    '<modifiers>* <keys>': press_key,
 })
 ctx.set_lists({
     'keys': keys.keys(),
     'modifiers': modifiers.keys(),
-})
-ctx.set_regexes({
-    'punctuation': '[' + ''.join(string.punctuation) + ']',
 })
