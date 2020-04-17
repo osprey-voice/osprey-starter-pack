@@ -66,21 +66,21 @@ punctuation = normalise_keys({
     'slash|forward slash': '/',
     'semicolon|semi': ';',
     'quote|single quote|apostrophe': '\'',
-    'square|open square|left square|bracket|open bracket|left bracket': '[',
-    'close square|right square|close bracket|right bracket': ']',
+    'square|open square|bracket|open bracket': '[',
+    'close square|close bracket': ']',
     'backslash': '\\',
 
     # shift required
     'tilde': '~',
     'underscore|under score|under': '_',
     'plus': '+',
-    'angle|open angle|left angle|less than': '<',
-    'close angle|right angle|greater than': '>',
+    'angle|open angle|less than': '<',
+    'close angle|greater than': '>',
     'question|question mark': '?',
     'colon': ':',
     'double quote|double quotes': '"',
-    'brace|open brace|left brace|curly|open curly|left curly': '{',
-    'close brace|right brace|close curly|right curly': '}',
+    'brace|open brace|curly|open curly': '{',
+    'close brace|close curly': '}',
     'pipe|bar': '|',
 
     # above numbers
@@ -92,8 +92,8 @@ punctuation = normalise_keys({
     'caret': '^',
     'ampersand': '&',
     'star|asterisk': '*',
-    'paren|open paren|left paren': '(',
-    'close paren|right paren': ')',
+    'paren|open paren': '(',
+    'close paren': ')',
 })
 
 digits = {str(i): str(i) for i in range(10)}
