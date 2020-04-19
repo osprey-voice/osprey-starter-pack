@@ -114,8 +114,8 @@ modifiers = normalise_keys({
 
 
 def press_key(m):
-    mods = [modifiers[mod] for mod in m['modifiers']] if 'modifiers' in m else []
-    key = keys[m['keys'][0]]
+    mods = [modifiers[mod] for mod in m['modifiers']]
+    key = keys[m['keys']]
     press(' '.join(mods + [key]))
 
 
