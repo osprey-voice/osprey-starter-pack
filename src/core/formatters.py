@@ -18,6 +18,7 @@ ctx.set_rules({
     'title <phrase>': lambda m: insert(string.capwords(m['phrase'])),
     'sentence <phrase>': lambda m: insert(uppercase_i(m['phrase'].capitalize())),
     'all caps <phrase>': lambda m: insert(m['phrase'].upper()),
+    'snake <phrase>': lambda m: insert(m['phrase'].replace(' ', '_')),
 
     'undo insert': lambda m: undo_insert(),
 })
