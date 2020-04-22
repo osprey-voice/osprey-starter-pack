@@ -10,15 +10,16 @@ def uppercase_i(s):
 
 ctx = Context('formatters')
 ctx.set_rules({
-    # 'upper <word>': lambda m: insert(m['word'].capitalize()),
-    # 'lower <word>': lambda m: insert(m['word'].lower()),
     # 'word <word>': lambda m: insert(m['word']),
+    # 'upper <word>': lambda m: insert(m['word'].capitalize()),
 
     'phrase <phrase>': lambda m: insert(uppercase_i(m['phrase'])),
     'title <phrase>': lambda m: insert(string.capwords(m['phrase'])),
     'sentence <phrase>': lambda m: insert(uppercase_i(m['phrase'].capitalize())),
     'all caps <phrase>': lambda m: insert(m['phrase'].upper()),
     'snake <phrase>': lambda m: insert(m['phrase'].replace(' ', '_')),
+    'snake all caps <phrase>': lambda m: insert(m['phrase'].replace(' ', '_').upper()),
+    'kebab <phrase>': lambda m: insert(m['phrase'].replace(' ', '-')),
 
     'undo insert': lambda m: undo_insert(),
 })
