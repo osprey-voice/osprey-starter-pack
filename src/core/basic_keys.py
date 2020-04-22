@@ -44,7 +44,7 @@ misc_keys = normalise_keys({
     'up': 'Up',
     'down': 'Down',
     'caps lock': 'CapsLock',
-    'back|backspace': 'Backspace',
+    'back|backspace|back space': 'Backspace',
     'delete': 'Delete',
     'space': 'Space',
     'tab': 'Tab',
