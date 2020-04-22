@@ -20,7 +20,6 @@ shrink_map = {
     'control': 'ctrl',
     'format': 'fmt',
     'image': 'img',
-    'jason': 'json',
     'message': 'msg',
     'package': 'pkg',
     'parameter': 'param',
