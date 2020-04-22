@@ -36,7 +36,7 @@ alphabet_words = [
 
 alphabet = dict(zip(alphabet_words, string.ascii_lowercase))
 
-function_keys = {f'F{i}': f'F{i}' for i in range(1, 13)}
+function_keys = {f'function {i}': f'F{i}' for i in range(1, 13)}
 
 misc_keys = normalise_keys({
     'left': 'Left',
