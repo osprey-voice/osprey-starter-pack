@@ -9,7 +9,7 @@ alphabet_words = [
     'art',
     'bit',
     'cat',
-    'dark',
+    'dip',
     'each',
     'food',
     'good',
@@ -31,12 +31,13 @@ alphabet_words = [
     'week',
     'plex',
     'york',
-    'zip',
+    'zap',
 ]
 
 alphabet = dict(zip(alphabet_words, string.ascii_lowercase))
 
-function_keys = {f'function {i}': f'F{i}' for i in range(1, 13)}
+one_to_twelve = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten', 'eleven', 'twelve']
+function_keys = {f'function {word}': f'F{i}' for i, word in enumerate(one_to_twelve)}
 
 misc_keys = normalise_keys({
     'left': 'Left',
@@ -96,7 +97,8 @@ punctuation = normalise_keys({
     'close paren': ')',
 })
 
-digits = {str(i): str(i) for i in range(10)}
+zero_to_nine = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine']
+digits = {word: str(i) for i, word in enumerate(zero_to_nine)}
 
 keys = {}
 keys.update(function_keys)
