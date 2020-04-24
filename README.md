@@ -6,9 +6,9 @@ Includes commands ported from [talon_community](https://github.com/dwiel/talon_c
 
 ## Installation
 
-Enable by cloning this repo to the Osprey config directory.
+Install by cloning this repo to the Osprey config directory.
 
-### Linux
+### Linux and macOS
 
 ```bash
 mkdir -p ~/.config/osprey
