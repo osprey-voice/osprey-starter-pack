@@ -119,6 +119,7 @@ shrink_map = {
     'variable': 'var',
     'vector': 'vec',
     'velocity': 'vel',
+    'vocabulary': 'vocab',
     'volume': 'vol',
 
     # months,
