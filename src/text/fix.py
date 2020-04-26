@@ -1,6 +1,7 @@
 from osprey.voice import Context, insert
 
 fix_list = [
+    'add',
     'and',
     'desk',
 ]
