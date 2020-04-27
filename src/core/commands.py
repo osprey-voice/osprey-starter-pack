@@ -4,7 +4,7 @@ from sys import platform
 from osprey.voice import Context
 
 
-def pgrep(name):
+def is_program_running(name):
     return subprocess.run(['pgrep', name], capture_output=True).returncode == 0
 
 
@@ -14,7 +14,7 @@ def clear_notifications(m):
     elif platform == 'darwin':
         pass
     else:
-        if pgrep('mako'):
+        if is_program_running('mako'):
             subprocess.run('makoctl dismiss -a'.split())
 
 
