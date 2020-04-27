@@ -14,6 +14,7 @@ vocab_list = [
     'readd',
     'struct',
     'subprocess',
+    'sudo',
     'tig',
     'TypeScript',
     'vim',
