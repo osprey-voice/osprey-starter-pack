@@ -60,7 +60,7 @@ misc_keys = normalize_keys({
 punctuation = normalize_keys({
     # no shift required
     'tick|back tick|backtick': '`',
-    'minus|dash|hyphen': '-',
+    'minus|dash|hyphen|negative': '-',
     'equals|equal': '=',
     'comma': ',',
     'dot|period': '.',
