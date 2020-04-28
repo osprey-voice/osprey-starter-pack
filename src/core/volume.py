@@ -20,6 +20,6 @@ ctx = Context('volume')
 ctx.set_rules({
     'volume up': lambda m: press('VolumeUp'),
     'volume down': lambda m: press('VolumeDown'),
-    'volume mute': lambda m: press('Mute'),
+    'volume mute': lambda m: press('VolumeMute'),
     'volume set <n>': lambda m: set_volume(m['n']),
 })
