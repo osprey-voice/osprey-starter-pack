@@ -14,14 +14,15 @@ ctx.set_rules({
     # 'upper <word>': lambda m: insert(m['word'].capitalize()),
 
     'phrase <phrase>': lambda m: insert(uppercase_i(m['phrase'])),
-    'title <phrase>': lambda m: insert(string.capwords(m['phrase'])),
     'sentence <phrase>': lambda m: insert(uppercase_i(m['phrase'].capitalize())),
+
     'all caps <phrase>': lambda m: insert(m['phrase'].upper()),
-    'snake <phrase>': lambda m: insert(m['phrase'].replace(' ', '_')),
-    'snake all caps <phrase>': lambda m: insert(m['phrase'].replace(' ', '_').upper()),
     'kebab <phrase>': lambda m: insert(m['phrase'].replace(' ', '-')),
     'kebab title <phrase>': lambda m: insert(string.capwords(m['phrase']).replace(' ', '-')),
     'smash <phrase>': lambda m: insert(m['phrase'].replace(' ', '')),
+    'snake <phrase>': lambda m: insert(m['phrase'].replace(' ', '_')),
+    'snake all caps <phrase>': lambda m: insert(m['phrase'].replace(' ', '_').upper()),
+    'title <phrase>': lambda m: insert(string.capwords(m['phrase'])),
 
     'undo insert': lambda m: undo_insert(),
 })
