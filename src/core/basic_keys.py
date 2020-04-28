@@ -2,7 +2,7 @@ import string
 
 from osprey.voice import Context, press, insert
 
-from ..utils import normalise_keys
+from ..utils import normalize_keys
 
 
 alphabet_words = [
@@ -39,7 +39,7 @@ alphabet = dict(zip(alphabet_words, string.ascii_lowercase))
 one_to_twelve = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten', 'eleven', 'twelve']
 function_keys = {f'function {word}': f'F{i}' for i, word in enumerate(one_to_twelve)}
 
-misc_keys = normalise_keys({
+misc_keys = normalize_keys({
     'left': 'Left',
     'right': 'Right',
     'up': 'Up',
@@ -57,7 +57,7 @@ misc_keys = normalise_keys({
     'page down': 'PageDown',
 })
 
-punctuation = normalise_keys({
+punctuation = normalize_keys({
     # no shift required
     'tick|back tick|backtick': '`',
     'minus|dash|hyphen': '-',
@@ -107,7 +107,7 @@ keys.update(punctuation)
 keys.update(alphabet)
 keys.update(digits)
 
-modifiers = normalise_keys({
+modifiers = normalize_keys({
     'command': 'Cmd',
     'control|troll': 'Ctrl',
     'shift': 'Shift',

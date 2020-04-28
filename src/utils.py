@@ -2,12 +2,12 @@ import subprocess
 from shutil import which
 
 
-def normalise_keys(dict):
-    normalised_dict = {}
+def normalize_keys(dict):
+    normalized_dict = {}
     for k, v in dict.items():
         for cmd in k.split('|'):
-            normalised_dict[cmd] = v
-    return normalised_dict
+            normalized_dict[cmd] = v
+    return normalized_dict
 
 
 def is_program_running(name):
