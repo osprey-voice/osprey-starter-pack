@@ -2,7 +2,7 @@ import string
 
 from osprey.voice import Context, press, insert
 
-from ..common import normalise_keys
+from ..utils import normalise_keys
 
 
 alphabet_words = [

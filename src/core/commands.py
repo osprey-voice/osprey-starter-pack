@@ -3,7 +3,7 @@ from sys import platform
 
 from osprey.voice import Context
 
-from ..common import is_program_running
+from ..utils import is_program_running
 
 
 def clear_notifications(m):

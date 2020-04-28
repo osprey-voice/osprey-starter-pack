@@ -3,7 +3,7 @@ import subprocess
 
 from osprey.voice import Context, press
 
-from ..common import is_program_installed
+from ..utils import is_program_installed
 
 
 def set_volume(n):
