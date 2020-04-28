@@ -1,13 +1,9 @@
 from sys import platform
-from shutil import which
 import subprocess
 
 from osprey.voice import Context, press
 
-
-def is_program_installed(name):
-    """Check whether `name` is in PATH and marked as executable."""
-    return which(name) is not None
+from ..common import is_program_installed
 
 
 def set_volume(n):

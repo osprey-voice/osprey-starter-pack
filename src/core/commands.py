@@ -3,9 +3,7 @@ from sys import platform
 
 from osprey.voice import Context
 
-
-def is_program_running(name):
-    return subprocess.run(['pgrep', name], capture_output=True).returncode == 0
+from ..common import is_program_running
 
 
 def clear_notifications(m):

@@ -14,6 +14,7 @@ vocab_list = [
     'kinesis',
     'Neovim',
     'readd',
+    'refactor',
     'struct',
     'subprocess',
     'sudo',
