@@ -51,6 +51,7 @@ shrink_map = {
     'else if': 'elif',
     'environment': 'env',
     'error': 'err',
+    'escape': 'esc',
     'execute': 'exec',
     'extend': 'ext',
     'extension': 'ext',
