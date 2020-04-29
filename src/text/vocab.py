@@ -13,6 +13,7 @@ vocab_list = [
     'Kaldi',
     'kinesis',
     'Neovim',
+    'prepend',
     'readd',
     'refactor',
     'struct',
