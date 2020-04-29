@@ -10,7 +10,7 @@ def code_block(m):
 
 
 ctx = Context('markdown')
-ctx.set_rules({
+ctx.set_commands({
     'check box': lambda m: insert('- [ ] '),
     'code block': code_block,
 })

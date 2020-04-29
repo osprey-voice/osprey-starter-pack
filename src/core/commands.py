@@ -17,6 +17,6 @@ def clear_notifications(m):
 
 
 ctx = Context('commands')
-ctx.set_rules({
+ctx.set_commands({
     'clear notifications': clear_notifications,
 })

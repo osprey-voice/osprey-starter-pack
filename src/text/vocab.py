@@ -26,7 +26,7 @@ vocab_list = [
 ]
 
 ctx = Context('vocab')
-ctx.set_rules({
+ctx.set_commands({
     'vocab <vocab>': lambda m: insert(m['vocab']),
 })
 ctx.set_lists({

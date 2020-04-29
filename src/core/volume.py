@@ -17,7 +17,7 @@ def set_volume(n):
 
 
 ctx = Context('volume')
-ctx.set_rules({
+ctx.set_commands({
     'volume up': lambda m: press('VolumeUp'),
     'volume down': lambda m: press('VolumeDown'),
     'volume mute': lambda m: press('VolumeMute'),

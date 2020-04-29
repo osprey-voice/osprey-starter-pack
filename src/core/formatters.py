@@ -16,7 +16,7 @@ def camel_case(m):
 
 
 ctx = Context('formatters')
-ctx.set_rules({
+ctx.set_commands({
     # 'word <word>': lambda m: insert(m['word']),
     # 'upper <word>': lambda m: insert(m['word'].capitalize()),
 

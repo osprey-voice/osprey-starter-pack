@@ -7,7 +7,7 @@ fix_list = [
 ]
 
 ctx = Context('fix')
-ctx.set_rules({
+ctx.set_commands({
     'fix <fix>': lambda m: insert(m['fix']),
 })
 ctx.set_lists({

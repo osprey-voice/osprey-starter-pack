@@ -16,7 +16,7 @@ def ordinal(n):
 
 
 ctx = Context('numbers')
-ctx.set_rules({
+ctx.set_commands({
     'number <n>': lambda m: insert(str(m['n'])),
     'ordinal <n>': lambda m: insert(ordinal(m['n'])),
 })

@@ -19,7 +19,7 @@ def surround(m):
 
 
 ctx = Context('surround')
-ctx.set_rules({
+ctx.set_commands({
     'surround <surround>': surround,
 })
 ctx.set_lists({
