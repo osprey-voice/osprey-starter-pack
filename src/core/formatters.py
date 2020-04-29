@@ -8,6 +8,13 @@ def uppercase_i(s):
     return re.sub(r'\bi\b', 'I', s)
 
 
+def camel_case(m):
+    words = m['phrase'].split(' ')
+    formatted_words = [word if i == 0 else word.capitalize() for i, word in enumerate(words)]
+    joined = ''.join(formatted_words)
+    insert(joined)
+
+
 ctx = Context('formatters')
 ctx.set_rules({
     # 'word <word>': lambda m: insert(m['word']),
@@ -17,6 +24,7 @@ ctx.set_rules({
     'sentence <phrase>': lambda m: insert(uppercase_i(m['phrase'].capitalize())),
 
     'all caps <phrase>': lambda m: insert(m['phrase'].upper()),
+    'camel <phrase>': camel_case,
     'kebab <phrase>': lambda m: insert(m['phrase'].replace(' ', '-')),
     'kebab title <phrase>': lambda m: insert(string.capwords(m['phrase']).replace(' ', '-')),
     'smash <phrase>': lambda m: insert(m['phrase'].replace(' ', '')),
