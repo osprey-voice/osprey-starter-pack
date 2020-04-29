@@ -28,6 +28,7 @@ ctx.set_rules({
     'kebab <phrase>': lambda m: insert(m['phrase'].replace(' ', '-')),
     'kebab title <phrase>': lambda m: insert(string.capwords(m['phrase']).replace(' ', '-')),
     'smash <phrase>': lambda m: insert(m['phrase'].replace(' ', '')),
+    'smash title <phrase>': lambda m: insert(string.capwords(m['phrase']).replace(' ', '')),
     'snake <phrase>': lambda m: insert(m['phrase'].replace(' ', '_')),
     'snake all caps <phrase>': lambda m: insert(m['phrase'].replace(' ', '_').upper()),
     'title <phrase>': lambda m: insert(string.capwords(m['phrase'])),
