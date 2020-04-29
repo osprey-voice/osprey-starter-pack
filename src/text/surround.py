@@ -22,6 +22,6 @@ ctx = Context('surround')
 ctx.set_commands({
     'surround <surround>': surround,
 })
-ctx.set_lists({
+ctx.set_choices({
     'surround': surround_map.keys(),
 })

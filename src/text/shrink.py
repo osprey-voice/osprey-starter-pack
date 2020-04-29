@@ -147,6 +147,6 @@ ctx = Context('shrink')
 ctx.set_commands({
     'shrink <shrink>': lambda m: insert(shrink_map[m['shrink']]),
 })
-ctx.set_lists({
+ctx.set_choices({
     'shrink': shrink_map.keys(),
 })
