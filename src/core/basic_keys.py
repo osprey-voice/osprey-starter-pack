@@ -4,7 +4,6 @@ from osprey.voice import Context, press, insert
 
 from ..utils import normalize_keys
 
-
 alphabet_words = [
     'art',
     'bit',
