@@ -14,3 +14,10 @@ Install by cloning this repo to the Osprey config directory.
 mkdir -p ~/.config/osprey
 git clone https://github.com/osprey-voice/osprey-starter-pack ~/.config/osprey/osprey-starter-pack
 ```
+
+### Windows
+
+```batch
+mkdir -p C:\Users\<username>\AppData\Local\osprey-voice\osprey
+git clone https://github.com/osprey-voice/osprey-starter-pack C:\Users\<username>\AppData\Local\osprey-voice\osprey\osprey-starter-pack
+```
