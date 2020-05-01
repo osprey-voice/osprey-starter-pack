@@ -108,10 +108,9 @@ keys.update(alphabet)
 keys.update(digits)
 
 modifiers = normalize_keys({
-    'command': 'Cmd',
-    'control|troll': 'Ctrl',
+    'control|troll|command': 'Ctrl',
     'shift': 'Shift',
-    'alt': 'Alt',
+    'alt|option': 'Alt',
 })
 
 
