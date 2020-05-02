@@ -1,6 +1,7 @@
 from osprey.voice import Context, insert
 
 vocab_list = [
+    'cardioid',
     'changelog',
     'config',
     'Erlang',
