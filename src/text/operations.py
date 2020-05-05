@@ -1,4 +1,4 @@
-from osprey.voice import Context, insert, press
+from osprey.voice import Context, insert
 
 from ..utils import normalize_keys
 
