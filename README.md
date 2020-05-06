@@ -18,6 +18,6 @@ git clone https://github.com/osprey-voice/osprey-starter-pack ~/.config/osprey/o
 ### Windows
 
 ```batch
-mkdir -p C:\Users\<username>\AppData\Local\osprey-voice\osprey
-git clone https://github.com/osprey-voice/osprey-starter-pack C:\Users\<username>\AppData\Local\osprey-voice\osprey\osprey-starter-pack
+mkdir -p C:\Users\%USERNAME%\AppData\Local\osprey-voice\osprey
+git clone https://github.com/osprey-voice/osprey-starter-pack C:\Users\%USERNAME%\AppData\Local\osprey-voice\osprey\osprey-starter-pack
 ```
