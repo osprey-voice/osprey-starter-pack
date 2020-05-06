@@ -34,6 +34,7 @@ vocab_list = [
 ctx = Context('vocab')
 ctx.set_commands({
     'vocab <vocab>': lambda m: insert(m['vocab']),
+    'vocab upper <vocab>': lambda m: insert(m['vocab'].capitalize()),
 })
 ctx.set_choices({
     'vocab': vocab_list,
