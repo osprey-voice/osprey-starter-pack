@@ -1,5 +1,5 @@
-import string
 import re
+import string
 
 from osprey.voice import Context, insert, press, repeat, undo_insert
 

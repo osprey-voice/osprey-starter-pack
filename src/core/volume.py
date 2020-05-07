@@ -1,5 +1,5 @@
-from sys import platform
 import subprocess
+from sys import platform
 
 from osprey.voice import Context, press
 
