@@ -82,6 +82,7 @@ shrink_map = {
     'miscellaneous': 'misc',
     'navigate': 'nav',
     'navigation': 'nav',
+    'neovim': 'nvim',
     'number': 'num',
     'object': 'obj',
     'operations': 'ops',
