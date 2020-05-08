@@ -147,6 +147,7 @@ shrink_map = {
 ctx = Context('shrink')
 ctx.set_commands({
     'shrink <shrink>': lambda m: insert(shrink_map[m['shrink']]),
+    'shrink upper <shrink>': lambda m: insert(shrink_map[m['shrink']].capitalize()),
 })
 ctx.set_choices({
     'shrink': shrink_map.keys(),
