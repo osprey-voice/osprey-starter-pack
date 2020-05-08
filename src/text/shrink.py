@@ -130,24 +130,34 @@ shrink_map = {
     'vocabulary': 'vocab',
     'volume': 'vol',
 
-    # months,
-    'january': 'jan',
-    'february': 'feb',
-    'march': 'mar',
-    'april': 'apr',
-    'june': 'jun',
-    'july': 'jul',
-    'august': 'aug',
-    'september': 'sept',
-    'october': 'oct',
-    'november': 'nov',
-    'december': 'dec',
+    # months
+    'January': 'Jan',
+    'February': 'Feb',
+    'March': 'Mar',
+    'April': 'Apr',
+    'June': 'Jun',
+    'July': 'Jul',
+    'August': 'Aug',
+    'September': 'Sept',
+    'October': 'Oct',
+    'November': 'Nov',
+    'December': 'Dec',
+
+    # days of the week
+    'Sunday': 'Sun',
+    'Monday': 'Mon',
+    'Tuesday': 'Tue',
+    'Wednesday': 'Wed',
+    'Thursday': 'Thu',
+    'Friday': 'Fri',
+    'Saturday': 'Sat',
 }
 
 ctx = Context('shrink')
 ctx.set_commands({
     'shrink <shrink>': lambda m: insert(shrink_map[m['shrink']]),
     'shrink upper <shrink>': lambda m: insert(shrink_map[m['shrink']].capitalize()),
+    'shrink lower <shrink>': lambda m: insert(shrink_map[m['shrink']].lower()),
 })
 ctx.set_choices({
     'shrink': shrink_map.keys(),

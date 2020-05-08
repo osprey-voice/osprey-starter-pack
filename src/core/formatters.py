@@ -19,6 +19,7 @@ ctx = Context('formatters')
 ctx.set_commands({
     # 'word <word>': lambda m: insert(m['word']),
     # 'upper <word>': lambda m: insert(m['word'].capitalize()),
+    # 'lower <word>': lambda m: insert(m['word'].lower()),
 
     'phrase <phrase>': lambda m: insert(uppercase_i(m['phrase'])),
     'sentence <phrase>': lambda m: insert(uppercase_i(m['phrase'].capitalize())),
