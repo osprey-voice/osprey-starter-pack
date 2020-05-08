@@ -7,6 +7,7 @@ vocab_list = [
     'config',
     'Erlang',
     'formatter',
+    'formatters',
     'git',
     'GitLab',
     'gitter',
