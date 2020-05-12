@@ -1,11 +1,14 @@
 from osprey.voice import Context, insert
 
 vocab_list = [
+    'backtrace',
     'callable',
     'cardioid',
     'changelog',
+    'committer',
     'config',
     'Erlang',
+    'Flatpak',
     'formatter',
     'formatters',
     'git',
@@ -15,6 +18,7 @@ vocab_list = [
     'json',
     'Kaldi',
     'kinesis',
+    'lints',
     'Neovim',
     'prepend',
     'readd',
