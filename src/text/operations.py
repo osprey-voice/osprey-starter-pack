@@ -5,11 +5,15 @@ from ..utils import normalize_keys
 operations_map = normalize_keys({
     'equal|equals': '=',
     'equivalent': '==',
+    'not equal': '!=',
     'plus equal': '+=',
     'minus equal': '-=',
-    'not equal': '!=',
     'increment': '++',
     'decrement': '--',
+    'less than': '<',
+    'greater than': '>',
+    'less than or equal': '<=',
+    'greater than or equal': '>=',
 })
 
 
