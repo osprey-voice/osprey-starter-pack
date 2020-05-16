@@ -12,8 +12,10 @@ cli_map = {
     'symbolic link': 'ln -s ',
     'word count': 'wc ',
 
+    'all': '-a ',
     'force': '-f ',
     'interactive': '-i ',
+    'long': '-l ',
     'recursive': '-r ',
     'silent': '-s ',
     'verbose': '-v ',
