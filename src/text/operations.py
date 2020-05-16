@@ -14,6 +14,8 @@ operations_map = normalize_keys({
     'greater than': '>',
     'less than or equal': '<=',
     'greater than or equal': '>=',
+    'and': '&&',
+    'or': '||',
 })
 
 
