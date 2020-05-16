@@ -13,10 +13,13 @@ cli_map = {
     'word count': 'wc ',
 
     'force': '-f ',
+    'interactive': '-i ',
     'recursive': '-r ',
+    'silent': '-s ',
     'verbose': '-v ',
 
     'flag': '--',
+    'help': '--help',
     'version': '--version',
 
     'parent': '../',

@@ -4,6 +4,7 @@ fix_list = [
     'add',
     'and',
     'desk',
+    'man',
 ]
 
 ctx = Context('fix')
