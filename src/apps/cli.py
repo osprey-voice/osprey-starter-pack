@@ -1,15 +1,25 @@
 from osprey.voice import Context, insert
 
 cli_map = {
-    'parent': '../',
+    'cd': 'cd ',
+    'copy': 'cp ',
+    'link': 'ln ',
+    'list': 'ls ',
+    'make dir': 'mkdir ',
     'move': 'mv ',
     'remove': 'rm ',
-    'cd': 'cd ',
-    'link': 'ln ',
-    'symbolic link': 'ln -s',
-    'list': 'ls ',
-    'copy': 'cp ',
+    'remove dir': 'rmdir ',
+    'symbolic link': 'ln -s ',
+    'word count': 'wc ',
+
+    'force': '-f ',
+    'recursive': '-r ',
+    'verbose': '-v ',
+
     'flag': '--',
+    'version': '--version',
+
+    'parent': '../',
 }
 
 ctx = Context('cli')
