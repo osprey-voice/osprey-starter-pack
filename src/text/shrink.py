@@ -92,6 +92,7 @@ shrink_map = {
     'parameters': 'params',
     'position': 'pos',
     'previous': 'prev',
+    'process': 'proc',
     'production': 'prod',
     'psychology': 'psych',
     'random': 'rand',
