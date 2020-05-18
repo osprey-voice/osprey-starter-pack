@@ -34,6 +34,7 @@ vocab_list = [
     'tendonitis',
     'tig',
     'TypeScript',
+    'uninstalling',
     'Vim',
     'vocab',
 ]
