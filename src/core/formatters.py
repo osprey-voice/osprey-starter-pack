@@ -8,18 +8,21 @@ def uppercase_i(s):
     return re.sub(r'\bi\b', 'I', s)
 
 
-def camel_case(m):
+def format(m, formatter):
     words = m['phrase'].split(' ')
-    formatted_words = [word if i == 0 else word.capitalize() for i, word in enumerate(words)]
-    joined = ''.join(formatted_words)
+    formatted_text = [formatter(i, word) for i, word in enumerate(words)]
+    joined = ''.join(formatted_text)
     insert(joined)
+
+
+def camel_case(m):
+    formatter = lambda i, word: word if i == 0 else word.capitalize()
+    format(m, formatter)
 
 
 def acronym(m):
-    words = m['phrase'].split(' ')
-    letters = [word[0].upper() for word in words]
-    joined = ''.join(letters)
-    insert(joined)
+    formatter = lambda _i, word: word[0].upper()
+    format(m, formatter)
 
 
 ctx = Context('formatters')
