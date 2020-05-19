@@ -3,6 +3,7 @@ from osprey.voice import Context, insert
 acronyms_map = {
     'a b i': 'ABI',
     'a o e': 'AoE',
+    'a u r': 'AUR',
     'Ajax': 'Ajax',
     'API': 'API',
     'c c r': 'CCR',
