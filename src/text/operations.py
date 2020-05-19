@@ -4,12 +4,13 @@ from ..utils import normalize_keys
 
 operations_map = normalize_keys({
     'equal|equals': '=',
-    'equivalent': '==',
-    'not equal': '!=',
     'plus equal': '+=',
     'minus equal': '-=',
     'increment': '++',
     'decrement': '--',
+
+    'equivalent': '==',
+    'not equal': '!=',
     'less than': '<',
     'greater than': '>',
     'less than or equal': '<=',
