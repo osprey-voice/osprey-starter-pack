@@ -40,13 +40,19 @@ vocab_list = [
     'vocab',
 ]
 
+vocab_map = {
+    'j query': 'jQuery',
+    'p s util': 'psutil',
+}
+vocab_map.update({word: word for word in vocab_list})
+
 ctx = Context('vocab')
 ctx.set_commands({
-    'vocab <vocab>': lambda m: insert(m['vocab']),
-    'vocab upper <vocab>': lambda m: insert(m['vocab'].capitalize()),
-    'vocab lower <vocab>': lambda m: insert(m['vocab'].lower()),
-    'vocab all caps <vocab>': lambda m: insert(m['vocab'].upper()),
+    'vocab <vocab>': lambda m: insert(vocab_map[m['vocab']]),
+    'vocab upper <vocab>': lambda m: insert(vocab_map[m['vocab']].capitalize()),
+    'vocab lower <vocab>': lambda m: insert(vocab_map[m['vocab']].lower()),
+    'vocab all caps <vocab>': lambda m: insert(vocab_map[m['vocab']].upper()),
 })
 ctx.set_choices({
-    'vocab': vocab_list,
+    'vocab': vocab_map.keys(),
 })
