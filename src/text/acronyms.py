@@ -8,6 +8,8 @@ acronyms_list = [
     'GUI',
     'PHP',
     'TUI',
+    'UK',
+    'USA',
     'XML',
 ]
 
@@ -16,7 +18,9 @@ acronyms_map = {
     'a o e': 'AoE',
     'a u r': 'AUR',
     'c c r': 'CCR',
+    'e u': 'EU',
     'Jason': 'JSON',
+    'u s': 'US',
 }
 acronyms_map.update({word: word for word in acronyms_list})
 
