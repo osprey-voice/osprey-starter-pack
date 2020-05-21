@@ -115,13 +115,17 @@ modifiers = normalize_keys({
 
 def press_key(m):
     mods = [modifiers[mod] for mod in m['modifiers']]
-    key = keys[m['keys']]
-    press(' '.join(mods + [key]))
+    if 'keys' in m:
+        key = keys[m['keys']]
+        press(' '.join(mods + [key]))
+    else:
+        press(' '.join(mods))
 
 
 ctx = Context('basic_keys')
 ctx.set_commands({
     '<modifiers>* <keys>': press_key,
+    '<modifiers>+': press_key,
 })
 ctx.set_choices({
     'keys': keys.keys(),
