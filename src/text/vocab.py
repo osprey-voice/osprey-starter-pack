@@ -2,6 +2,7 @@ from osprey.voice import Context, insert
 
 vocab_list = [
     'backtrace',
+    'bifurcate',
     'bitwise',
     'callable',
     'cardioid',
@@ -21,6 +22,7 @@ vocab_list = [
     'kinesis',
     'lints',
     'Neovim',
+    'nondeterminism',
     'prepend',
     'readd',
     'README',

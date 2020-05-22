@@ -2,27 +2,65 @@ from osprey.voice import Context, insert
 
 acronyms_list = [
     'Ajax',
-    'API',
     'CLI',
-    'CPU',
     'GUI',
-    'PHP',
     'TUI',
+]
+
+acronyms_spell_out_list = [
+    'ABI',
+    'AGPL',
+    'AI',
+    'AoE',
+    'API',
+    'ATM',
+    'AUR',
+    'BSD',
+    'CCR',
+    'CD',
+    'CI',
+    'CPU',
+    'CS',
+    'CSS',
+    'DB',
+    'DVD',
+    'EU',
+    'GPL',
+    'GPS',
+    'GPU',
+    'HTML',
+    'HTTP',
+    'HTTPS',
+    'IO',
+    'IP',
+    'IT',
+    'LGPL',
+    'MIT',
+    'MP3',
+    'NTP',
+    'OS',
+    'PHP',
+    'PR',
+    'RSI',
+    'SQL',
+    'SSL',
+    'SVG',
+    'TCP',
+    'TLS',
+    'TV',
+    'UDP',
     'UK',
+    'UN',
+    'US',
     'USA',
     'XML',
 ]
 
 acronyms_map = {
-    'a b i': 'ABI',
-    'a o e': 'AoE',
-    'a u r': 'AUR',
-    'c c r': 'CCR',
-    'e u': 'EU',
     'Jason': 'JSON',
-    'u s': 'US',
 }
 acronyms_map.update({word: word for word in acronyms_list})
+acronyms_map.update({' '.join(word.lower()): word for word in acronyms_spell_out_list})
 
 ctx = Context('acronyms')
 ctx.set_commands({
