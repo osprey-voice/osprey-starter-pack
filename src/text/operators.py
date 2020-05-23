@@ -2,7 +2,7 @@ from osprey.voice import Context, insert
 
 from ..utils import normalize_keys
 
-operations_map = normalize_keys({
+operators_map = normalize_keys({
     'equal|equals': '=',
     'plus equal': '+=',
     'minus equal': '-=',
@@ -20,15 +20,15 @@ operations_map = normalize_keys({
 })
 
 
-def operations(m):
-    op = operations_map[m['operations']]
+def operators(m):
+    op = operators_map[m['operators']]
     insert(f' {op} ')
 
 
-ctx = Context('operations')
+ctx = Context('operators')
 ctx.set_commands({
-    'op <operations>': operations,
+    'op <operators>': operators,
 })
 ctx.set_choices({
-    'operations': operations_map.keys(),
+    'operators': operators_map.keys(),
 })
