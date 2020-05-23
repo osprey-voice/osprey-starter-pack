@@ -27,6 +27,7 @@ vocab_list = [
     'readd',
     'README',
     'refactor',
+    'reinstantiate',
     'struct',
     'structs',
     'subprocess',
