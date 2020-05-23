@@ -9,6 +9,8 @@ vocab_list = [
     'changelog',
     'committer',
     'config',
+    'delimiter',
+    'delimiters',
     'delineator',
     'delineators',
     'Erlang',
