@@ -10,7 +10,6 @@ cli_map = {
     'remove': 'rm ',
     'remove dir': 'rmdir ',
     'symbolic link': 'ln -s ',
-    'word count': 'wc ',
 
     'all': '-a ',
     'force': '-f ',
