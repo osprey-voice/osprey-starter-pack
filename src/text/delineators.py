@@ -2,7 +2,7 @@ from osprey.voice import Context, insert, press
 
 from ..utils import normalize_keys
 
-surround_map = normalize_keys({
+delineators_map = normalize_keys({
     'tick': '``',
     'quote': '\'\'',
     'square|bracket': '[]',
@@ -14,14 +14,15 @@ surround_map = normalize_keys({
 
 
 def surround(m):
-    insert(surround_map[m['surround']])
+    insert(delineators_map[m['delineators']])
     press('Left')
 
 
-ctx = Context('surround')
+ctx = Context('delineators')
 ctx.set_commands({
-    'surround <surround>': surround,
+    'surround <delineators>': surround,
+    'pair <delineators>': lambda m: insert(delineators_map[m['delineators']]),
 })
 ctx.set_choices({
-    'surround': surround_map.keys(),
+    'delineators': delineators_map.keys(),
 })
