@@ -28,6 +28,7 @@ acronyms_spell_out_list = [
     'GPL',
     'GPS',
     'GPU',
+    'HD',
     'HTML',
     'HTTP',
     'HTTPS',
@@ -43,6 +44,7 @@ acronyms_spell_out_list = [
     'PR',
     'RSI',
     'SQL',
+    'SSD',
     'SSL',
     'SVG',
     'TCP',
@@ -62,13 +64,28 @@ acronyms_map = {
 acronyms_map.update({word: word for word in acronyms_list})
 acronyms_map.update({' '.join(word.lower()): word for word in acronyms_spell_out_list})
 
+subcommands = {
+    'all caps': lambda s: s.upper(),
+    'lower': lambda s: s.lower(),
+    'upper': lambda s: s.capitalize(),
+}
+
+
+def acronyms(m):
+    acronym = acronyms_map[m['acronyms']]
+    if m['subcommands']:
+        subcommand = subcommands[m['subcommands']]
+        acronym = subcommand(acronym)
+    if 'dotted' in m['transcript']:
+        acronym = '.'.join(acronym) + '.'
+    insert(acronym)
+
+
 ctx = Context('acronyms')
 ctx.set_commands({
-    'acronym <acronyms>': lambda m: insert(acronyms_map[m['acronyms']]),
-    'acronym upper <acronyms>': lambda m: insert(acronyms_map[m['acronyms']].capitalize()),
-    'acronym lower <acronyms>': lambda m: insert(acronyms_map[m['acronyms']].lower()),
-    'acronym all caps <acronyms>': lambda m: insert(acronyms_map[m['acronyms']].upper()),
+    'acronym [<subcommands>] [dotted] <acronyms>': acronyms,
 })
 ctx.set_choices({
     'acronyms': acronyms_map.keys(),
+    'subcommands': subcommands.keys(),
 })

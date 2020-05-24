@@ -35,6 +35,8 @@ vocab_list = [
     'reinstantiate',
     'struct',
     'structs',
+    'subcommand',
+    'subcommands',
     'subprocess',
     'subprocesses',
     'sudo',
