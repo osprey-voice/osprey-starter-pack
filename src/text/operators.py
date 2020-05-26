@@ -4,11 +4,38 @@ from ..utils import normalize_keys
 
 operators_map = normalize_keys({
     'equal|equals': '=',
+
+    # arithmetic assignment
     'plus equal': '+=',
     'minus equal': '-=',
     'increment': '++',
     'decrement': '--',
+    'multiply equal': '*=',
+    'divide equal': '/=',
+    'mod equal|remainder equal': '%=',
 
+    # bitwise assignment
+    'bitwise and equal': '&=',
+    'bitwise or equal': '|=',
+    'bitwise x or equal': '^=',
+    'right shift equal': '>>=',
+    'left shift equal': '<<=',
+
+    # arithmetic expressions
+    'plus': '+',
+    'minus': '-',
+    'multiply': '*',
+    'divide': '/',
+    'mod|remainder': '%',
+
+    # bitwise expressions
+    'bitwise and': '&',
+    'bitwise or': '|',
+    'bitwise x or': '^',
+    'right shift': '>>',
+    'left shift': '<<',
+
+    # boolean expressions
     'equivalent': '==',
     'not equal': '!=',
     'less than': '<',
