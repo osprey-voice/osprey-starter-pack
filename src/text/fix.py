@@ -3,7 +3,10 @@ from osprey.voice import Context, insert
 fix_list = [
     'add',
     'and',
+    'bin',
+    'crate',
     'desk',
+    'git',
     'man',
 ]
 

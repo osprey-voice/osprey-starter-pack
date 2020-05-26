@@ -2,8 +2,13 @@ from osprey.voice import Context, insert
 
 acronyms_list = [
     'Ajax',
+    'ASCII',
     'CLI',
+    'GNU',
     'GUI',
+    'NASA',
+    'NATO',
+    'POSIX',
     'TUI',
 ]
 
@@ -28,18 +33,24 @@ acronyms_spell_out_list = [
     'GPL',
     'GPS',
     'GPU',
+    'GTK',
     'HD',
     'HTML',
     'HTTP',
     'HTTPS',
+    'IDE',
     'IO',
     'IP',
     'IT',
     'LGPL',
     'MIT',
     'MP3',
+    'npm',
+    'npx',
     'NTP',
     'OS',
+    'PDF',
+    'PhD',
     'PHP',
     'PR',
     'RSI',
@@ -56,10 +67,11 @@ acronyms_spell_out_list = [
     'US',
     'USA',
     'XML',
+    'YAML',
 ]
 
 acronyms_map = {
-    'Jason': 'JSON',
+    'j son': 'JSON',
 }
 acronyms_map.update({word: word for word in acronyms_list})
 acronyms_map.update({' '.join(word.lower()): word for word in acronyms_spell_out_list})
