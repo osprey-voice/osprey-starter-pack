@@ -44,6 +44,8 @@ vocab_list = [
     'tendon',
     'tendons',
     'tig',
+    'todo',
+    'Todoist',
     'TypeScript',
     'Unicode',
     'uninstalling',

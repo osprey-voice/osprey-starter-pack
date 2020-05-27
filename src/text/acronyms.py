@@ -9,7 +9,9 @@ acronyms_list = [
     'NASA',
     'NATO',
     'POSIX',
+    'TOML',
     'TUI',
+    'YAML',
 ]
 
 acronyms_spell_out_list = [
@@ -52,6 +54,7 @@ acronyms_spell_out_list = [
     'PDF',
     'PhD',
     'PHP',
+    'PNG',
     'PR',
     'QT',
     'RSI',
@@ -68,10 +71,10 @@ acronyms_spell_out_list = [
     'US',
     'USA',
     'XML',
-    'YAML',
 ]
 
 acronyms_map = {
+    'j peg': 'JPEG',
     'j son': 'JSON',
 }
 acronyms_map.update({word: word for word in acronyms_list})
