@@ -1,7 +1,7 @@
 import re
 import string
 
-from osprey.voice import Context, insert, press, repeat, undo_insert
+from osprey.voice import Context, insert, undo_insert
 
 
 def uppercase_i(s):
