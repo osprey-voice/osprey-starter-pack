@@ -20,11 +20,6 @@ def camel_case(m):
     format(m, formatter)
 
 
-def acronym(m):
-    formatter = lambda _i, word: word[0].upper()
-    format(m, formatter)
-
-
 ctx = Context('formatters')
 ctx.set_commands({
     'word <word>': lambda m: insert(m['word']),
@@ -34,7 +29,6 @@ ctx.set_commands({
     'phrase <phrase>': lambda m: insert(uppercase_i(m['phrase'])),
     'sentence <phrase>': lambda m: insert(uppercase_i(m['phrase'].capitalize())),
 
-    'acronym <phrase>': acronym,
     'all caps <phrase>': lambda m: insert(m['phrase'].upper()),
     'camel <phrase>': camel_case,
     'kebab <phrase>': lambda m: insert(m['phrase'].replace(' ', '-')),
