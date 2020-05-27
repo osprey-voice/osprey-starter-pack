@@ -53,6 +53,7 @@ acronyms_spell_out_list = [
     'PhD',
     'PHP',
     'PR',
+    'QT',
     'RSI',
     'SQL',
     'SSD',
