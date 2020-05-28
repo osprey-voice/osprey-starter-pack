@@ -44,6 +44,7 @@ shrink_map = {
     'different': 'diff',
     'directory': 'dir',
     'distribution': 'dist',
+    'divide': 'div',
     'divider': 'div',
     'division': 'div',
     'document': 'doc',
