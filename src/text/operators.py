@@ -10,8 +10,8 @@ operators_map = normalize_keys({
     'minus equal': '-=',
     'increment': '++',
     'decrement': '--',
-    'multiply equal': '*=',
-    'divide equal': '/=',
+    'multiply equal|star equal': '*=',
+    'divide equal|div equal': '/=',
     'mod equal|remainder equal': '%=',
 
     # bitwise assignment
@@ -24,8 +24,8 @@ operators_map = normalize_keys({
     # arithmetic expressions
     'plus': '+',
     'minus': '-',
-    'multiply': '*',
-    'divide': '/',
+    'multiply|star': '*',
+    'divide|div': '/',
     'mod|remainder': '%',
 
     # bitwise expressions
