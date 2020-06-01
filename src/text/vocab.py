@@ -9,6 +9,9 @@ vocab_list = [
     'changelog',
     'committer',
     'config',
+    'deallocate',
+    'deallocated',
+    'deallocating',
     'delimiter',
     'delimiters',
     'delineator',
@@ -55,6 +58,7 @@ vocab_list = [
 
 vocab_map = {
     'free b s d': 'FreeBSD',
+    'h top': 'htop',
     'j query': 'jQuery',
     'mac o s': 'macOS',
     'net b s d': 'NetBSD',
