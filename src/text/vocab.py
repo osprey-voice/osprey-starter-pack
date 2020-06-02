@@ -1,5 +1,42 @@
 from osprey.voice import Context, insert
 
+acronyms_spell_out_list = [
+    'ABI',
+    'AGPL',
+    'AI',
+    'ATM',
+    'AUR',
+    'BSD',
+    'CCR',
+    'CI',
+    'CSS',
+    'GPL',
+    'GPU',
+    'GTK',
+    'HTTPS',
+    'IDE',
+    'IT',
+    'LGPL',
+    'MP3',
+    'npm',
+    'npx',
+    'NTP',
+    'OS',
+    'PhD',
+    'PNG',
+    'PR',
+    'QT',
+    'RSI',
+    'SSD',
+    'SSL',
+    'SVG',
+    'TLS',
+    'UDP',
+    'UN',
+    'US',
+    'USA',
+]
+
 vocab_list = [
     'backtrace',
     'bifurcate',
@@ -7,6 +44,7 @@ vocab_list = [
     'callable',
     'cardioid',
     'changelog',
+    'CLI',
     'committer',
     'config',
     'deallocate',
@@ -22,7 +60,9 @@ vocab_list = [
     'formatters',
     'GitLab',
     'Gitter',
+    'GNU',
     'grep',
+    'GUI',
     'homeserver',
     'Kaldi',
     'kinesis',
@@ -30,6 +70,7 @@ vocab_list = [
     'Neovim',
     'nondeterminism',
     'nondeterministic',
+    'POSIX',
     'prepend',
     'readd',
     'README',
@@ -49,17 +90,22 @@ vocab_list = [
     'tig',
     'todo',
     'Todoist',
+    'TOML',
+    'TUI',
     'TypeScript',
     'Unicode',
     'uninstalling',
     'vim',
     'vocab',
+    'YAML',
 ]
 
 vocab_map = {
     'free b s d': 'FreeBSD',
     'h top': 'htop',
+    'j peg': 'JPEG',
     'j query': 'jQuery',
+    'j son': 'JSON',
     'mac o s': 'macOS',
     'net b s d': 'NetBSD',
     'n vim': 'nvim',
@@ -71,14 +117,30 @@ vocab_map = {
     'x eighty six sixty four': 'x86_64',
 }
 vocab_map.update({word: word for word in vocab_list})
+vocab_map.update({' '.join(word.lower()): word for word in acronyms_spell_out_list})
+
+subcommands = {
+    'all caps': lambda s: s.upper(),
+    'lower': lambda s: s.lower(),
+    'upper': lambda s: s.capitalize(),
+}
+
+
+def vocab(m):
+    vocab = vocab_map[m['vocab']]
+    if m['subcommands']:
+        subcommand = subcommands[m['subcommands']]
+        vocab = subcommand(vocab)
+    if 'dotted' in m['transcript']:
+        vocab = '.'.join(vocab) + '.'
+    insert(vocab)
+
 
 ctx = Context('vocab')
 ctx.set_commands({
-    'vocab <vocab>': lambda m: insert(vocab_map[m['vocab']]),
-    'vocab upper <vocab>': lambda m: insert(vocab_map[m['vocab']].capitalize()),
-    'vocab lower <vocab>': lambda m: insert(vocab_map[m['vocab']].lower()),
-    'vocab all caps <vocab>': lambda m: insert(vocab_map[m['vocab']].upper()),
+    'vocab [<subcommands>] [dotted] <vocab>': vocab,
 })
 ctx.set_choices({
     'vocab': vocab_map.keys(),
+    'subcommands': subcommands.keys(),
 })
