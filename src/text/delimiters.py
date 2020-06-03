@@ -10,12 +10,15 @@ delimiters_map = normalize_keys({
     'double quote|double quotes': '""',
     'brace|curly': '{}',
     'paren': '()',
+    'double under': '____',
 })
 
 
 def surround(m):
-    insert(delimiters_map[m['delimiters']])
-    press('Left')
+    delimiters = delimiters_map[m['delimiters']]
+    insert(delimiters)
+    for _i in range(len(delimiters) // 2):
+        press('Left')
 
 
 ctx = Context('delimiters')
