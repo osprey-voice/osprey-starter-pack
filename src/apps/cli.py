@@ -7,6 +7,8 @@ cli_map = {
     'list': 'ls ',
     'make dir': 'mkdir ',
     'move': 'mv ',
+    'p grep': 'pgrep ',
+    'p kill': 'pkill ',
     'remove': 'rm ',
     'remove dir': 'rmdir ',
     'symbolic link': 'ln -s ',

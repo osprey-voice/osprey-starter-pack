@@ -44,6 +44,7 @@ vocab_list = [
     'callable',
     'cardioid',
     'changelog',
+    'checkout',
     'CLI',
     'committer',
     'config',
@@ -101,6 +102,7 @@ vocab_list = [
 ]
 
 vocab_map = {
+    'e v dev': 'evdev',
     'free b s d': 'FreeBSD',
     'h top': 'htop',
     'j peg': 'JPEG',
@@ -112,6 +114,7 @@ vocab_map = {
     'open b s d': 'OpenBSD',
     'pip x': 'pipx',
     'p s util': 'psutil',
+    'u input': 'uinput',
     'u t f 8': 'UTF-8',
     'x eighty six': 'x86',
     'x eighty six sixty four': 'x86_64',

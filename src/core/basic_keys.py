@@ -35,7 +35,8 @@ alphabet_words = [
 
 alphabet = dict(zip(alphabet_words, string.ascii_lowercase))
 
-one_to_twelve = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten', 'eleven', 'twelve']
+one_to_twelve = ['one', 'two', 'three', 'four', 'five', 'six',
+                 'seven', 'eight', 'nine', 'ten', 'eleven', 'twelve']
 function_keys = {f'function {word}': f'F{i}' for i, word in enumerate(one_to_twelve)}
 
 misc_keys = normalize_keys({
@@ -62,7 +63,7 @@ punctuation = normalize_keys({
     'minus|dash|hyphen|negative': '-',
     'equals|equal': '=',
     'comma': ',',
-    'dot|period': '.',
+    'dot|period|point': '.',
     'slash|forward slash': '/',
     'semicolon|semi': ';',
     'quote|single quote|apostrophe': '\'',
