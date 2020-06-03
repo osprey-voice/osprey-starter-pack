@@ -61,6 +61,7 @@ vocab_list = [
     'formatters',
     'GitLab',
     'Gitter',
+    'glob',
     'GNU',
     'grep',
     'GUI',
