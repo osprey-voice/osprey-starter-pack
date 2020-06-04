@@ -11,6 +11,7 @@ delimiters_map = normalize_keys({
     'brace|curly': '{}',
     'paren': '()',
     'double under': '____',
+    'space': '  ',
 })
 
 

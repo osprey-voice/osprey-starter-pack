@@ -2,6 +2,7 @@ from osprey.voice import Context, insert
 
 cli_map = {
     'cd': 'cd ',
+    'change mode': 'chmod ',
     'copy': 'cp ',
     'link': 'ln ',
     'list': 'ls ',
