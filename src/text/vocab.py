@@ -69,6 +69,7 @@ vocab_list = [
     'Neovim',
     'nondeterminism',
     'nondeterministic',
+    'ordinal',
     'prepend',
     'readd',
     'README',
