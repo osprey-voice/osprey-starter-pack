@@ -1,22 +1,42 @@
 from osprey.voice import Context, insert
 
+from ..utils import normalize_keys
 
-def ordinal(n):
-    """
-    Convert an integer into its ordinal representation:
-        ordinal(0)   => '0th'
-        ordinal(3)   => '3rd'
-        ordinal(122) => '122nd'
-        ordinal(213) => '213th'
-    """
+separators_map = normalize_keys({
+    'commas': ',',
+    'underscores': '_',
+    'dots|periods|points': '.',
+})
+
+
+def ordinal_suffix(n):
     suffix = ['th', 'st', 'nd', 'rd', 'th'][min(n % 10, 4)]
     if 11 <= (n % 100) <= 13:
         suffix = 'th'
-    return str(n) + suffix
+    return suffix
+
+
+def format_number(n, separator):
+    n = str(n)
+    if not separator:
+        return n
+    n = list(n)
+    for i in range(3, len(n), 4):
+        n.insert(len(n) - i, separator)
+    return ''.join(n)
+
+
+def number(m):
+    n = m['n']
+    separator = separators_map[m['separators']] if m['separators'] else None
+    return format_number(n, separator)
 
 
 ctx = Context('numbers')
 ctx.set_commands({
-    'number <n>': lambda m: insert(str(m['n'])),
-    'ordinal <n>': lambda m: insert(ordinal(m['n'])),
+    'number <n> [with <separators>]': lambda m: insert(number(m)),
+    'ordinal <n> [with <separators>]': lambda m: insert(number(m) + ordinal_suffix(m['n'])),
+})
+ctx.set_choices({
+    'separators': separators_map.keys(),
 })
