@@ -126,7 +126,7 @@ def press_key(m):
 ctx = Context('basic_keys')
 ctx.set_commands({
     '<modifiers>* <keys>': press_key,
-    '<modifiers>+': press_key,
+    '<modifiers> key': press_key,
 })
 ctx.set_choices({
     'keys': keys.keys(),
